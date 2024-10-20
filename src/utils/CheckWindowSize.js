@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 // Function to check window size (mobile, iPad, desktop)
-export function CheckWindowSize() {
+export function updates () {
 
   const [widowInstance , setWindowInstance] = useState()
   const [widowWidth , setWindowWidth] = useState()
