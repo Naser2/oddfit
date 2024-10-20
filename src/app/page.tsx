@@ -122,7 +122,7 @@ export default  function Home() {
         <ChallengeListFeatured tracks={tracks}/>
         <AboustSection aboutSection={homePageData.about} shouldBreak/>
         <ElevatorPitch elevatorPitch={homePageData.ElevatorPitch} />
-         <SectionSSubscription pricingSections={homePageData?.pricing}/>
+        <SectionSSubscription pricingSections={homePageData?.pricing}/>
         </div>   
        </div>
        
