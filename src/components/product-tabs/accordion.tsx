@@ -1,3 +1,6 @@
+
+"use client";
+
 import { Text, clx } from "@medusajs/ui";
 import React, { useState } from "react";
 

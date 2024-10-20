@@ -1,12 +1,11 @@
 'use client'
 
 import Image from "next/image";
-
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useSearchParams, useRouter } from "next/navigation"; 
 
 import ChallengeListFeatured from '@/components/ChallengeListFeatured'
-import { PlayButton } from '@/components/PlayButton'
+// import { PlayButton } from '@/components/PlayButton'
 // import {
 //   BuildingOffice2Icon,
 //   EnvelopeIcon,
@@ -28,6 +27,7 @@ import  ElevatorPitch  from '@/components/ElevatorPitch'
 import Link from "next/link";
 import  getTracks  from '../../api/getTracks.ts'
 
+import { useState } from "react";
 export default  function Home() {
    const[homePageData, setHomegPageData] = useState(null)
    const [tracks, setTracks] = useState();

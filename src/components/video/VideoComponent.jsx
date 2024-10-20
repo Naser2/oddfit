@@ -1,7 +1,11 @@
+"use client";
+
 import Image from 'next/image'
 import clsx from 'clsx'
 import { useWindowDimensions } from '@/lib/useWindowDimension.js'
 import { useEffect, useMemo, useRef, useState } from 'react'
+
+
 export const VideoComponent = ({ content, aspect, defaultAspect }) => {
   const [videoIsPlaying, setVideoIsPlaying] = useState(false)
   const [imageZindex, setImageZindex] = useState('z-[0.5]')

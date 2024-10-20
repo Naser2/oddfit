@@ -1,3 +1,6 @@
+"use client";
+
+
 import React, { useRef } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'

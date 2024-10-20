@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image'
 
 import { Fragment, useEffect, useId, useRef, useState } from 'react'
