@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import  CustomSidebar  from "@/components/navigations/CustomSidebar";
-import  SideBar  from "@/components/navigations/SideBar";
-import ProfileLayout from "../../components/ProfileComponent"
+// import  CustomSidebar  from "@/components/navigations/CustomSidebar";
+// import  SideBar  from "@/components/navigations/SideBar";
+// import ProfileLayout from "../../components/ProfileComponent"
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <div lang="en">
-       <ProfileLayout/>
+       <h1 dangerouslySetInnerHTML={{ __html: "DASHBOARD" }}
+                className="prose prose-sm mt-4 text-gray-500" 
+         />
     </div>
   );
 }
