@@ -28,6 +28,7 @@ import Link from "next/link";
 import  getTracks  from '../../api/getTracks.ts'
 
 import { useState } from "react";
+
 export default  function Home() {
    const[homePageData, setHomegPageData] = useState(null)
    const [tracks, setTracks] = useState();
