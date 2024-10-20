@@ -91,8 +91,11 @@ export default function AboutSection({aboutSection, shouldBreak}) {
 useEffect(() => 
     
     {const isDesktopOrTablet = () => {
+      if (typeof window !== 'undefined') {
+        return window.innerWidth >= 768;
+      }
     // Check if the device width is greater than a mobile breakpoint (e.g., 768px)
-    return window.innerWidth >= 768;
+    
   };
     if (!isDesktopOrTablet()) {
       // Do not apply the animation on mobile devices

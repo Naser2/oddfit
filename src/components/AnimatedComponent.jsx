@@ -38,9 +38,12 @@ const AnimatedComponent = ({ textToScaleDown, break: shouldBreak}) => {
       const element = document.getElementById('animatedDiv');
       if (element) {
         const rect = element.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-          setInView(true);
+        if (typeof window !== 'undefined') {
+          if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            setInView(true);
+          }
         }
+      
       }
     };
 

@@ -1,4 +1,5 @@
 'use client'
+
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
@@ -120,6 +121,7 @@ export default  function Home() {
         </ol> */}
 
         <ChallengeListFeatured tracks={tracks}/>
+        <AnimatedGallery />
         <AboustSection aboutSection={homePageData.about} shouldBreak/>
         <ElevatorPitch elevatorPitch={homePageData.ElevatorPitch} />
         <SectionSSubscription pricingSections={homePageData?.pricing}/>
