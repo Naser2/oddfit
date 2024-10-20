@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
-import ProfileComponent from '@/components/ProfileComponent'
+// import ProfileComponent from '@/components/ProfileComponent'
 export default async function PrivatePage() {
   const supabase = createClient()
 
@@ -11,7 +11,7 @@ export default async function PrivatePage() {
   }
 
   console.log("DATABASE DATA", data)
-  return <>  <ProfileComponent user={data}/> </>
+  return <h1 content='PRIVATE PAGE'/>
   
 }
   
