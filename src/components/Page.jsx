@@ -1,3 +1,6 @@
+
+"use client";
+
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 // import backgroundGif from '@/images/vllo-3.gif'
