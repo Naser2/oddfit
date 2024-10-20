@@ -5,7 +5,7 @@ import { createClient } from '@/utils/supabase/client';
 import { redirect } from 'next/dist/server/api-utils';
 import { useRouter } from 'next/navigation';
 import TrackProgress from '@/components/TrackProgress';
-import ProfileComponent from '../../components/ProfileComponent/index'
+// import ProfileComponent from '../../components/ProfileComponent/index'
 
 
 export default function ProfilePage() {
@@ -162,7 +162,7 @@ const MemberDashboard = ({ userProfile }) => {
   //   }
   // }
   return (<>
-  <ProfileComponent user={userProfile}/>
+  {/* <ProfileComponent user={userProfile}/> */}
   <div className="flex fixed flex-col gap-docs_0.5 right-0 md:w-auto w-full overflow-y-auto max-h-[50%] md:max-h-[calc(100vh-57px)] max-[768px]:h-[50%] bottom-0">
   <div className="md:max-w-[320px] md:w-[320px] w-full fixed md:right-docs_1 left-0 md:m-docs_1 md:bottom-docs_1 bottom-0 opacity-100 transition-opacity duration-200 ease-ease flex flex-col !relative !top-0 !bottom-0 !right-0">
     <div className="bg-medusa-bg-base shadow-flyout dark:shadow-flyout-dark rounded transition-transform origin-bottom-right flex flex-col">
