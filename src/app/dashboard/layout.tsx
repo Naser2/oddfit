@@ -28,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <div lang="en">
-       <h1 dangerouslySetInnerHTML={{ __html: "DASHBOARD" }}
-                className="prose prose-sm mt-4 text-gray-500" 
-         />
+      {children}
     </div>
   );
 }

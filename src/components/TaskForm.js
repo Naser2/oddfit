@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { PlusIcon } from '@heroicons/react/20/solid';
-import { BlueCheck } from '@/components/ProfileComponent/BlueCheck';
+// import { BlueCheck } from '@/components/ProfileComponent/BlueCheck';
 
 
 import * as React from "react"
@@ -151,7 +151,7 @@ const TaskForm = ({ userId, showTodoForm, setShowTodoForm  }) => {
             required
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           />
-          <BlueCheck/>
+          {/* <BlueCheck/> */}
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">Description</label>
