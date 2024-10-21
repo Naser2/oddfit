@@ -16,12 +16,12 @@ const AuthPage = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const router = useRouter();
   
-    const supabase = createClient();
+    // const supabase = createClient();
   
     // Handle login
     const handleLogin = async (e) => {
       e.preventDefault();
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error } = await createClient.auth.signInWithPassword({
         email,
         password,
       });
@@ -35,7 +35,7 @@ const AuthPage = () => {
     // Handle registration
     const handleRegister = async (e) => {
       e.preventDefault();
-      const { error } = await supabase.auth.signUp({
+      const { error } = await createClient.auth.signUp({
         email,
         password,
         options: {

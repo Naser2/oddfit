@@ -68,7 +68,7 @@ export default function MobileNavigation({isNavOpen, handleNavToggle,  handleNav
 
   const mobildeNavTop = [{name:'About', href:'/about'}, {name:'Exercises', href:'/exercises'}, {name:'Tracks', href:'/tracks'}, {href:"/contact", name:'Contact'} ]
   const mobildeNavMiddle =
-   [{name:'Settings', href:"/settings"},{name:'Login', href:'/auth'} ]
+   [{name:'Settings', href:"/settings"},{name:'Login', href:'/login'} ]
   const additionalNavItems = [
    {name:'Subscription'}, 
   {href:'/subscription'},
@@ -208,7 +208,35 @@ export default function MobileNavigation({isNavOpen, handleNavToggle,  handleNav
           </div>
         </div>
       </div>
-
+ {!user && <div className="auth www-navigation-container">
+  <div className="www-navigation__mobile__login">
+  { !user ?  <Link  
+      href="/login"
+      className="www-navigation__mobile__login-button button www-navigation__mobile__cta cta bg-white text-[#000] is-button w-[90vw] !mx-6"
+    >
+      Log In
+    </Link>
+     : <Link
+      href="#"
+      data-object-type="button"
+      data-identifier="cta"
+      className="mavigation__mobile__logout-button  button is-visible is-button w-[90vw] "
+    >
+      Log Out
+    </Link>}
+  </div>
+  <a
+    className="www-navigation__mobile__cta cta bg-white text-[#000] is-button w-[90vw] !mx-6"
+    href="/templates"
+    data-object-type="button"
+    data-identifier="cta"
+    data-sl-variant="get-started-colloquial"
+  >
+    Get started
+  </a>
+</div>
+ 
+      }
   { user &&   <div className="md:hidden p-4 mt-6 z-50">
         <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 max-w-[64em]">
         <ul role="list" className="flex flex-1 flex-col gap-y-4">
