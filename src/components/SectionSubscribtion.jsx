@@ -7,7 +7,7 @@ import PricingCard from "./cards/PricingCard";
 
 
 export const SectionSSubscription = ({pricingSections, session}) => {
-  return <div className="sm:-mt-[5.75rem] overflow-hidden pb-20 sm:pb-24 lg:pb-2 bg-[#5b6068] bg-black">
+  return <div className="mt-[-1rem] overflow-hidden pb-20 sm:pb-24 lg:pb-2 bg-[#5b6068] bg-black">
     <FadeInStagger key={"Pricing-FadeinStager"}>
   <div className="relative  pb-16 max-[680px]:pt-[5.75rem]  pb-8"> 
   <FadeIn>

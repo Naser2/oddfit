@@ -3,40 +3,16 @@
 import Link from "next/link";
 import { FadeIn, FadeInStagger } from "./FadeIn";  
 import { useEffect, useRef } from "react";
-const benefitsOfWorkingOut = [
-    {
-      title: "Improved Mood",
-      description: "Regular exercise can help improve your mood and reduce feelings of anxiety and depression."
-    },
-    {
-      title: "Increased Energy",
-      description: "Engaging in physical activity can boost your energy levels and improve overall stamina."
-    },
-    {
-      title: "Better Sleep",
-      description: "Exercise can help you fall asleep faster and enjoy deeper sleep."
-    },
-    {
-      title: "Weight Management",
-      description: "Consistent workouts can help maintain a healthy weight and prevent obesity."
-    },
-    {
-      title: "Enhanced Mental Health",
-      description: "Physical activity stimulates various brain chemicals that may leave you feeling happier, more relaxed, and less anxious."
-    }
-  ];
 
 
 export default function SectionProvenMethods() {
 
 
-
   const sectionRef = useRef(null);
-  const paragraphRef  = useRef(null);
-    const SectionTextCompRef = useRef(null); 
+
 
   useEffect(() => {
-    const bgMedia = document.getElementById('bgMedia_comp-kkr2t6ab');
+    const bgMedia = document.getElementById('comp-kkr3f330');
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -48,7 +24,7 @@ export default function SectionProvenMethods() {
                 }
             });
         },
-        { threshold: 0.0 }  // Adjust the threshold as needed
+        { threshold: 0.1 }  // Adjust the threshold as needed
     );
 
     if (sectionRef.current) {
@@ -61,6 +37,37 @@ export default function SectionProvenMethods() {
         }
     };
 }, []);
+
+
+  const paragraphRef  = useRef(null);
+    const SectionTextCompRef = useRef(null); 
+
+//   useEffect(() => {
+//     const bgMedia = document.getElementById('bgMedia_comp-kkr2t6ab');
+
+//     const observer = new IntersectionObserver(
+//         (entries) => {
+//             entries.forEach((entry) => {
+//                 if (entry.isIntersecting) {
+//                     bgMedia.classList.add('bg-pan-right');
+//                 } else {
+//                     bgMedia.classList.remove('bg-pan-right');
+//                 }
+//             });
+//         },
+//         { threshold: 0.0 }  // Adjust the threshold as needed
+//     );
+
+//     if (sectionRef.current) {
+//         observer.observe(sectionRef.current);
+//     }
+
+//     return () => {
+//         if (sectionRef.current) {
+//             observer.unobserve(sectionRef.current);
+//         }
+//     };
+// }, []);
 
 useEffect(() => {
     
@@ -155,7 +162,7 @@ return <section  id="comp-lt8qptn11"
                           className="wG8dni"
                         />
                       </div>  
-                    <FadeIn>
+                    {/* <FadeIn> */}
                    <div className="V5AUxf py-12  xl:py-24 " id="bgMedia_comp-kkr2t6ab">
                         <div 
                           id="comp-kkr3hmu3"
@@ -199,14 +206,56 @@ return <section  id="comp-lt8qptn11"
                               </div>
                             </div>
                           </div>
-                          <div  
-                          className="col-span-3 justify-center content-center" >
+                          <div      className="col-span-3 justify-center content-center" >
                             <div
                               data-mesh-id="comp-kkr3hmu3inlineContent-gridContainer"
                               data-testid="mesh-container-content"
                             >
                             
-                              <div  className="max-[679px]:shadowlight max-[640px]:!px-[1%] ">
+          <section id="elevator-pitch-bottom"  ref={sectionRef} className="min-[1031px]:hidden elevator-pitch-bottom py-6 lg:py-12 dark:!text-white h-full ">
+                        <div class="grid grid-cols-6 gap-4">
+                            {/* <div class="col-start-2 col-span-4 ...">01</div> */}
+                            <div class="col-start-1 col-end-5 ..."><FadeIn>  
+                        <div id="comp-kkr3f330" 
+                            className="col-span-4  w-full HcOXKn c9GqVL QxJLC3 comp-kkr3f330 wixui-rich-text width-full" 
+                              data-testid="richTextElement"
+                                style={{ visibility: "inherit" }} data-motion-enter="done">
+                                <h2 className="max-[600px]:!text-[33px] px-4 lg:px-8 font_2 wixui-rich-text__text" 
+                                    style={{ lineHeight: "normal", fontSize: 50 }}>
+                                    <span style={{ letterSpacing: "normal" }} 
+                                            className="wixui-rich-text__text">
+                                        <span style={{ fontWeight: "normal" }} 
+                                                className="wixui-rich-text__text">
+                                            <span style={{ fontFamily: "dinneuzeitgroteskltw01-_812426,sans-serif" }} 
+                                                    className="wixui-rich-text__text dark:!text-white">
+                                            {  `— TAKE THE FIRST STEP ON A JOURNEY THAT PUSHES YOU TO THE LIMIT`}    
+                                            </span>
+                                        </span>
+                                    </span>
+                                </h2>
+                            </div>
+                    </FadeIn> </div>
+                            <div class="col-end-7 col-span-2 ..."> <FadeIn> 
+                    <div id="comp-kkr3gyea" ref={sectionRef} className="col-start-4 hidden col-end-6 comp-kkr3gyea YzqVVZ wixui-column-strip__column !relative 
+                          min-w-44 px-8 py-8  lg:h-full lg:px-24 dark:!text-white bg-white w-full sm:px-8">
+                                <div className="">
+                                    <div data-testid="mesh-container-content">
+                                        <div className="" aria-disabled="false" style={{ visibility: "inherit" }}>
+                                            <Link  href="/tracks" target="_self" className="uDW_Qe wixui-button PlZyDq dark:!text-white text-center inline-flex justify-center" aria-disabled="false">
+                                        <span className="l7_2fn wixui-button__label text-black">Join Now</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </FadeIn>
+             </div>
+            {/* <div class="col-start-1 col-end-7 ...">04</div> */}
+            </div>
+  
+         </section>
+         
+                          <div  className="px-8 max-lg:!hidden max-[679px]:shadowlight max-[640px]:!px-[1%] ">
                                 <div id="comp-kkr2y2qd2"
                                     ref={paragraphRef} 
                                     className="relative HcOXKn SxM0TO QxJLC3  wixui-rich-text mt-0 sm:mt-12 !p-8">
@@ -234,7 +283,7 @@ return <section  id="comp-lt8qptn11"
                                   </div>
                               </div>
                           </Link>
-                          </div>
+                          </div> 
                                 
                       </div>
                     </div>
@@ -243,7 +292,7 @@ return <section  id="comp-lt8qptn11"
               </div>
             </div>
           </div>
-          </FadeIn>
+          {/* </FadeIn> */}
         </div>
 
     </div>

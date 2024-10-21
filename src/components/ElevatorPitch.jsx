@@ -158,6 +158,7 @@ useEffect(() =>
                         </h2>
                     </div>
             </FadeIn> </div>
+
                     <div class="col-end-7 col-span-2 ..."> <FadeIn> 
             <div id="comp-kkr3gyea" ref={sectionRef} className="col-start-4 hidden col-end-6 comp-kkr3gyea YzqVVZ wixui-column-strip__column !relative 
               min-w-44 px-8 py-8  lg:h-full lg:px-24 dark:!text-white bg-white w-full sm:px-8">

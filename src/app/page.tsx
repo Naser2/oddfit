@@ -230,7 +230,7 @@ export default function Home() {
       <ChallengeListFeatured tracks={tracks}/>
          {/* <AnimatedGallery /> */}
       <AboustSection aboutSection={homePageData?.about} shouldBreak/>
-      <ElevatorPitch elevatorPitch={homePageData?.ElevatorPitch} />
+      {/* <ElevatorPitch elevatorPitch={homePageData?.ElevatorPitch} /> */}
       <SectionSSubscription pricingSections={homePageData?.pricing}/>
         </div>   
        </div>
