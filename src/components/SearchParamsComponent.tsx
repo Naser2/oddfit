@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useEffect } from 'react';
+import { Fragment, Suspense, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function SearchParamsComponent() {
@@ -14,6 +14,6 @@ export default function SearchParamsComponent() {
         }
     }, [searchParams, router]);
 
-    return <div>Search component: No Params Found...</div>;
+    return router.push("/")
 }
 

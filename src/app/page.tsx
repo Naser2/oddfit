@@ -77,18 +77,23 @@ interface AsyncComponentProps {
 export default function Home() {
    const[homePageData, setHomegPageData] = useState<HomePageDataProps  | null>(null)
    const [tracks, setTracks] = useState<Track[]>([]);
-   const [loading, setLoading] = useState(false);
- 
-  useEffect(() => {
- 
-    const fetchTracksData = async () => {
+   const [loading, setLoading] = useState(true);
+
+
+   console.log("HOME_PAGE", "LOading ? ", loading)
+
+   useEffect(() => {
+    console.log("useEffect triggered"); // Debug log before fetching data
+    const fetchHOMEData = async () => {
+      console.log("HOME_PAGE_FETCHING");
       setLoading(true);
       const landingPageData = await fetchLandingPageData();
-      if(landingPageData !== undefined) {
-        setHomegPageData(landingPageData)
-      }  else {
-      setLoading(false) }
-     
+      if (landingPageData !== undefined) {
+        setHomegPageData(landingPageData);
+      } else {
+        setLoading(false);
+      }
+  
       console.log("HOME_PAGE", landingPageData);
       console.log("Fetching tracks data..."); // Debug log
   
@@ -109,8 +114,40 @@ export default function Home() {
       }
     };
   
-    fetchTracksData();
+    fetchHOMEData();
   }, []); // Make sure this dependency array is set to []
+  // useEffect(() => {
+  //   const fetchHOMEData = async () => {
+  //     console.log("HOME_PAGE_FETCHING")
+  //     setLoading(true);
+  //     const landingPageData = await fetchLandingPageData();
+  //     if(landingPageData !== undefined) {
+  //       setHomegPageData(landingPageData)
+  //     }  else {
+  //     setLoading(false) }
+     
+  //     console.log("HOME_PAGE", landingPageData);
+  //     console.log("Fetching tracks data...") // Debug log
+  
+  //     try {
+  //       const data = await getTracks();
+  //       console.log("TRACKS_IN_TRACKS_PAGE", data); // Check if this gets logged
+  
+  //       if (data && Array.isArray(data.tracks)) {
+  //         setTracks(data.tracks);
+  //       } else {
+  //         console.error("Unexpected tracks data format", data);
+  //         setTracks([]); // Default to an empty array if the structure is unexpected
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching tracks:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  
+  //   fetchHOMEData();
+  // }, []); // Make sure this dependency array is set to []
 
 
   // useEffect(() => {
@@ -150,39 +187,13 @@ export default function Home() {
   if (loading) {
     return  <div>Loading in MAIn...</div>}
          
-        
-  
 
-  // console.log("Loading-homePageData", homePageData);
-
-  // const experiences = await fetchExperiences();
-
-  // const skills = await fetchSkills();
-  // const subSkills: SubSkill[] = await fetchSubSkills();
-
-  
-
-  
   return (
-    <Suspense fallback={<div>Loading async content...</div>}>
-      <SearchParamsComponent/>
-    <AsyncComponent homePageData={homePageData} tracks={tracks} />
-  </Suspense>
-    
- 
-  );
-}
-
-
-export function AsyncComponent({ homePageData, tracks }: AsyncComponentProps)  {
-  console.log("ASYNC_COMPONENT", homePageData, tracks)
-  if (!tracks || tracks.length === 0) {
-    return <div>No tracks available.</div>;
-  }
-  // Render the fetched data here
-  return <div>
-
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen lg:p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+  <div className="relative min-h-[100vh]">
+      {/* <SearchParamsComponent/> */}
+      {/* <AsyncComponent homePageData={homePageData} tracks={tracks} /> */}
+      <div>
+      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen lg:p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
       <div className="relative w-screen overflow-hidden ">
         <div
@@ -218,15 +229,15 @@ export function AsyncComponent({ homePageData, tracks }: AsyncComponentProps)  {
 
       <ChallengeListFeatured tracks={tracks}/>
          {/* <AnimatedGallery /> */}
-      <AboustSection aboutSection={homePageData.about} shouldBreak/>
-      <ElevatorPitch elevatorPitch={homePageData.ElevatorPitch} />
+      <AboustSection aboutSection={homePageData?.about} shouldBreak/>
+      <ElevatorPitch elevatorPitch={homePageData?.ElevatorPitch} />
       <SectionSSubscription pricingSections={homePageData?.pricing}/>
         </div>   
        </div>
       
         <SectionBenefits />
         <SectionProvenMethods benefit={homePageData?.benefits}/>
-        <Gallery landingGalleryData={homePageData.gallery}/>
+        <Gallery landingGalleryData={homePageData?.gallery}/>
         {/* <AnimatedGallery/> */}
        <ContactSection contactForm={homePageData?.contact}/>
       </div>
@@ -277,9 +288,16 @@ export function AsyncComponent({ homePageData, tracks }: AsyncComponentProps)  {
         </Link>
       </footer>
     </div>
-  </div>;
+  </div>
+  </div>
+     
+ 
+  );
 }
 
-function checkPropTypes(trackPropType: any, track: any, arg2: string, arg3: string): unknown {
-  throw new Error("Function not implemented.");
-}
+
+// 
+
+// function checkPropTypes(trackPropType: any, track: any, arg2: string, arg3: string): unknown {
+//   throw new Error("Function not implemented.");
+// }
