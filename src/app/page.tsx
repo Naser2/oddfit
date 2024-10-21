@@ -1,10 +1,12 @@
 'use client'
 
 import Image from "next/image";
-import { useEffect} from "react";
+import { Suspense, useEffect} from "react";
 import { useSearchParams, useRouter } from "next/navigation"; 
-
+import PropTypes from 'prop-types';
 import ChallengeListFeatured from '@/components/ChallengeListFeatured'
+
+
 // import { PlayButton } from '@/components/PlayButton'
 // import {
 //   BuildingOffice2Icon,
@@ -13,7 +15,7 @@ import ChallengeListFeatured from '@/components/ChallengeListFeatured'
 // } from '@heroicons/react/24/outline'
 import AboustSection from '@/components/AboustSection'
 import Gallery from '@/components/Gallery'
-import AnimatedGallery from '@/components/AnimatedGallery'
+// import AnimatedGallery from '@/components/AnimatedGallery'
 import ContactSection from '@/components/ContactSection'
 import SectionProvenMethods from '@/components/SectionProvenMethods'
 import SectionBenefits from '@/components/SectionBenefits'
@@ -21,43 +23,81 @@ import { SectionSSubscription } from '@/components/SectionSubscribtion'
 import AnimatedComponent from '@/components/AnimatedComponent'
 import SlidingImage from '@/components/SlidingImage'
 // import { fetchTracks } from '@/utils/fetchTracks'
-import fetchTracks  from '../../api/getTracks'
+// import fetchTracks  from '../../api/getTracks'
 import fetchLandingPageData from '../../api/fetchLandingPageData' 
 import  ElevatorPitch  from '@/components/ElevatorPitch'
 import Link from "next/link";
-import  getTracks  from '../../api/getTracks.ts'
+import  getTracks  from '@/lib/getTracks'
 
 import { useState } from "react";
+import type { trackPropType } from "@/lib/Types";
+import SearchParamsComponent from "@/components/SearchParamsComponent";
 
-export default  function Home() {
-   const[homePageData, setHomegPageData] = useState(null)
-   const [tracks, setTracks] = useState();
-   const [loading, setLoading] = useState(true);
-   const router = useRouter();
 
-  const searchParams = useSearchParams(); // Use useSearchParams for query params
+type Track = {
+  _id: string;
+  title: string;
+  // Add other fields here based on your data structure
+};
+interface HomePageDataProps {
+  // Define the structure of homePageData if you know it
+  // For example:
+  about: {
+    coverImage: any;
+    tagline: string;
+    title: string;
+    description: string;
+  };
+  hero?: {
+    meta: string;
+    banner: {
+      image: any;
+      title: string;
+    };
+    tagline: string;
+  };
+  pricing?: {
+    title: string;
+    description: string;
+    plans: {
+      title: string;
+      price: string;
+      benefits: string[];
+    }[];
+  // Add more fields as needed
+}
 
+}
+interface AsyncComponentProps {
+  homePageData: HomePageDataProps | null;
+  tracks:Track[];
+}
+
+
+export default function Home() {
+   const[homePageData, setHomegPageData] = useState<HomePageDataProps  | null>(null)
+   const [tracks, setTracks] = useState<Track[]>([]);
+   const [loading, setLoading] = useState(false);
+ 
   useEffect(() => {
-    const code = searchParams.get("code"); // Extract the 'code' param from URL
-    if (code) {
-      // Redirect to the reset-password page with the code as query param
-      router.push(`/reset-password?code=${code}`);
-    }
-  }, [searchParams, router]);
-
-
-  useEffect(() => {
+ 
     const fetchTracksData = async () => {
-      try {
-        const data = await getTracks(); // Fetch tracks data directly
-        console.log("TRACKS_IN_TRACKS_PAGE", data);
-        const landingPageData = await fetchLandingPageData();
+      setLoading(true);
+      const landingPageData = await fetchLandingPageData();
+      if(landingPageData !== undefined) {
         setHomegPageData(landingPageData)
-        console.log("HOME_PAGE", landingPageData);
-
-        // Ensure the data is properly structured
+      }  else {
+      setLoading(false) }
+     
+      console.log("HOME_PAGE", landingPageData);
+      console.log("Fetching tracks data..."); // Debug log
+  
+      try {
+        const data = await getTracks();
+        console.log("TRACKS_IN_TRACKS_PAGE", data); // Check if this gets logged
+  
         if (data && Array.isArray(data.tracks)) {
-          setTracks(data.tracks); // Set the tracks array
+          setTracks(data.tracks);
         } else {
           console.error("Unexpected tracks data format", data);
           setTracks([]); // Default to an empty array if the structure is unexpected
@@ -68,15 +108,52 @@ export default  function Home() {
         setLoading(false);
       }
     };
-
+  
     fetchTracksData();
-  }, []);
+  }, []); // Make sure this dependency array is set to []
+
+
+  // useEffect(() => {
+    
+  //   const fetchTracksData = async () => {
+
+  //     try {
+  //       const data = await getTracks(); // Fetch tracks data directly
+
+  //       console.log("TRACKS_IN_TRACKS_PAGE", data);
+  //       const landingPageData = await fetchLandingPageData();
+  //       setHomegPageData(landingPageData)
+  //       console.log("HOME_PAGE", landingPageData);
+
+  //       // Ensure the data is properly structured
+  //       if (data && Array.isArray(data.tracks)) {
+
+  //         const isValid = data.tracks.every(track => PropTypes.checkPropTypes(trackPropType, track, 'prop', 'Track'));
+  //         if (isValid) {
+  //           setTracks(data.tracks);
+  //         }
+  //         // setTracks(data.tracks); // Set the tracks array
+  //       } else {
+  //         console.error("Unexpected tracks data format", data);
+  //         setTracks([]); // Default to an empty array if the structure is unexpected
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching tracks:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchTracksData();
+  // }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
-  }
+    return  <div>Loading in MAIn...</div>}
+         
+        
+  
 
-  console.log("Loading-homePageData", homePageData);
+  // console.log("Loading-homePageData", homePageData);
 
   // const experiences = await fetchExperiences();
 
@@ -87,6 +164,24 @@ export default  function Home() {
 
   
   return (
+    <Suspense fallback={<div>Loading async content...</div>}>
+      <SearchParamsComponent/>
+    <AsyncComponent homePageData={homePageData} tracks={tracks} />
+  </Suspense>
+    
+ 
+  );
+}
+
+
+export function AsyncComponent({ homePageData, tracks }: AsyncComponentProps)  {
+  console.log("ASYNC_COMPONENT", homePageData, tracks)
+  if (!tracks || tracks.length === 0) {
+    return <div>No tracks available.</div>;
+  }
+  // Render the fetched data here
+  return <div>
+
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen lg:p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
       <div className="relative w-screen overflow-hidden ">
@@ -101,7 +196,7 @@ export default  function Home() {
             className="MW5IWV N3eg0s"
           >
       <SlidingImage hero={homePageData?.hero}/>
-      <AnimatedComponent textToScaleDown={homePageData?.hero.title} break/>
+      <AnimatedComponent textToScaleDown={homePageData?.hero?.title} break/>
         <Image
           className="dark:invert"
           src="https://nextjs.org/icons/next.svg"
@@ -121,19 +216,19 @@ export default  function Home() {
           <li>Save and see your changes instantly.</li>
         </ol> */}
 
-        <ChallengeListFeatured tracks={tracks}/>
-        <AnimatedGallery />
-        <AboustSection aboutSection={homePageData.about} shouldBreak/>
-        <ElevatorPitch elevatorPitch={homePageData.ElevatorPitch} />
-        <SectionSSubscription pricingSections={homePageData?.pricing}/>
+      <ChallengeListFeatured tracks={tracks}/>
+         {/* <AnimatedGallery /> */}
+      <AboustSection aboutSection={homePageData.about} shouldBreak/>
+      <ElevatorPitch elevatorPitch={homePageData.ElevatorPitch} />
+      <SectionSSubscription pricingSections={homePageData?.pricing}/>
         </div>   
        </div>
-       
+      
         <SectionBenefits />
         <SectionProvenMethods benefit={homePageData?.benefits}/>
         <Gallery landingGalleryData={homePageData.gallery}/>
-              {/* <AnimatedGallery/> */}
-         <ContactSection contactForm={homePageData?.contact}/>
+        {/* <AnimatedGallery/> */}
+       <ContactSection contactForm={homePageData?.contact}/>
       </div>
       </main>
 
@@ -149,7 +244,7 @@ export default  function Home() {
             width={16}
             height={16}
           />
-          LLogin
+          Login
         </Link>
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
@@ -182,5 +277,9 @@ export default  function Home() {
         </Link>
       </footer>
     </div>
-  );
+  </div>;
+}
+
+function checkPropTypes(trackPropType: any, track: any, arg2: string, arg3: string): unknown {
+  throw new Error("Function not implemented.");
 }

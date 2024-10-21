@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -107,14 +108,13 @@ const AnimatedComponent = ({ textToScaleDown, break: shouldBreak}) => {
       {/* <div className="items-center block justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"> */}
      <div className="group xl:ml-[0%] mt-12 lg:mt-12 flex flex-col gap-8 row-start-2 items-center sm:items-start">
       <div className="xl:ml-[6%] justify-center inline-flex gap-4 items-center font-[family-name:var(--font-geist-sans)]">
-      <a
+      <Link
             className="rounded-full border bg-foreground  border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 hover:text-black"
             href='/tracks'
-            target="_blank"
-            rel="noopener noreferrer"
+          
           >
           Challenge
-          </a>
+          </Link>
              <Link href='/login'
               to="/login"
               className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center dark:bg-foreground text-background gap-2 bg-sky-600 hover:bg-sky-700 dark:hover:bg-[#383838] 
@@ -128,14 +128,13 @@ const AnimatedComponent = ({ textToScaleDown, break: shouldBreak}) => {
                 width={20}
                 height={20}
               />
-              LLogin
+              Login
             </Link>
 
             <Link 
             className="rounded-full border bg-foreground  border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44 hover:text-black"
             href='/login'
-            target="_blank"
-            rel="noopener noreferrer"
+          
           >
            Register
           </Link>

@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router'
+'use client'
+
+
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
@@ -10,6 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 // import ToggleICon from './ToggleIcon'
 import { SocialMedia } from './SocialMedia'
+import { usePathname } from 'next/navigation';
 
 function CloseIcon(props) {
   return (
@@ -122,7 +125,7 @@ function MobileNavigation(props) {
 }
 
 function NavItem({ href, children }) {
-  let isActive = useRouter().pathname === href
+  let isActive = usePathname().pathname === href
 
   return (
     <li className={clsx( isActive && 'btn--yellow', 'nav-item-box  bg-[#ffe2b5]')}>
@@ -361,7 +364,7 @@ const DesktopTitle = () => {
 }
 export function Header() {
  const [navButtonPossition, setNavButtonPossition] = useState('')
-  let isHomePage = useRouter().pathname === '/'
+  let isHomePage = usePathname().pathname === '/'
 
   let headerRef = useRef()
   let avatarRef = useRef()

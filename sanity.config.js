@@ -29,7 +29,7 @@ export default defineConfig({
   plugins: [
     structureTool(),
     visionTool({
-      defaultApiVersion: apiVersion,
+      defaultApiVersion: apiVersion ?? "2024-07-18",
     }),
   ],
 })

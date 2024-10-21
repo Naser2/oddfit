@@ -10,8 +10,9 @@ export function CheckWindowSize () {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setWindowInstance(true)
-      const width = window.innerWidth;
-       setWindowWidth(width)
+
+       setWindowWidth(width) 
+       const width = widowInstance.innerWidth;
       console.log('PAGE_IN_COMPONENTS_DIR_This is client-side rendering');
     } else {
       setWindowInstance(undefined)

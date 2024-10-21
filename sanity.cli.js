@@ -18,6 +18,6 @@ console.log("IN_SANITY_CLI_API_VERSION_INSANITY_ENV_JS", apiVersion,
 // const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
 
 export default defineCliConfig({
-  api: { projectId, dataset },
+  api: { projectId, dataset, apiVersion },
   studioHost: 'odfitbackend', // Add this line
 })

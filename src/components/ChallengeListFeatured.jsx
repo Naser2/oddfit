@@ -3,35 +3,6 @@ import Link from 'next/link';
 import React from 'react';
 import { FadeIn, FadeInStagger } from './FadeIn'
 import  { urlFor } from "@/sanity/lib/image.js";
-const challenges = [
-  {
-    id: '18055044-82ff-4f88-b041-dffb4e04182d',
-    title: 'Core & Abs Challenge',
-    participants: 473,
-    sessions: 3,
-    price: 'Free',
-    image: 'https://static.wixstatic.com/media/c837a6_25f64eb6dc7c40ed8e4fad42007d085e~mv2.jpg/v1/fit/w_800,h_600,al_c,q_90/file.webp',
-    link: 'https://www.wix.com/demone2/roy-pratt/challenge-page/18055044-82ff-4f88-b041-dffb4e04182d',
-  },
-  {
-    id: '907f746d-4d5a-42bf-b374-016f616e5bd3',
-    title: 'Upper Body Challenge',
-    participants: 231,
-    sessions: 5,
-    price: 'Free',
-    image: 'https://static.wixstatic.com/media/c837a6_be3f2b7431d748059fa9104b595c91ab~mv2.jpg/v1/fit/w_800,h_600,al_c,q_90/file.webp',
-    link: 'https://www.wix.com/demone2/roy-pratt/challenge-page/907f746d-4d5a-42bf-b374-016f616e5bd3',
-  },
-  {
-    id: 'bb7b8c48-93cf-4844-bc9b-689a8a14d86f',
-    title: 'Movement Challenge',
-    participants: 41,
-    sessions: 3,
-    price: 'Free',
-    image: 'https://static.wixstatic.com/media/c837a6_0f4c434b9b8c4a159c8a67c2307aea48~mv2.jpg/v1/fit/w_800,h_600,al_c,q_90/file.webp',
-    link: 'https://www.wix.com/demone2/roy-pratt/challenge-page/bb7b8c48-93cf-4844-bc9b-689a8a14d86f',
-  },
-];
 
 const ChallengeListFeatured = ({tracks}) => {
 

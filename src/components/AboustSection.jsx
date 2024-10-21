@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { FadeIn, FadeInStagger } from "./FadeIn";
+// import { FadeIn, FadeInStagger } from "./FadeIn";
 import { urlFor } from "@/sanity/lib/image.js";
-import {TextTrimmer} from '@/utils/TextTrimmer';
+// import {TextTrimmer} from '@/utils/TextTrimmer';
 
 export default function AboutSection({aboutSection, shouldBreak}) {
     const sectionRef = useRef(null);
@@ -154,10 +154,11 @@ useEffect(() =>
       }
     };
   }, [aboutSection]);
-  const trimmedText = TextTrimmer(aboutSection?.description)
+  // const trimmedText = TextTrimmer(aboutSection?.description)
+  const trimmedText = aboutSection?.description
     return (
         <section id="ABOUT_SECTION" ref={sectionRef} className="-mt-[8em] sm:-mt-[6em] overflow-hidden">
-            <FadeInStagger key={"ABOUT_SECTION-STAGGER"}>
+            {/* <FadeInStagger key={"ABOUT_SECTION-STAGGER"}> */}
             <div className="!relative h-full">
                 <div>
                     <section id="comp-kkr2t67f" className="comp-kkr2t67f CohWsy wixui-column-stri">
@@ -265,7 +266,7 @@ useEffect(() =>
                     </section>
                 </div>
             </div>
-         </FadeInStagger>
+         {/* </FadeInStagger> */}
         </section>
     );
 }

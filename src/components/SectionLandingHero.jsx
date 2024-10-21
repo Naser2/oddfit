@@ -1,9 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
 import clsx from 'clsx'
 
-import { useEffect, useRef } from 'react'
+
 
 // import newHeroBackground from '@/images/nasdesign_animated_bg_gif.gif'
 

@@ -333,7 +333,7 @@ export default function ProductPage({product}) {
     
     <ReviewsModal open={open} setOpen={setOpen}/>
 
-      <div id="PRODUCT-PAGE_MAIN"className="mx-auto  pt-2 sm:pt-12 sm:!pt-0 max-w-xl pb-16 sm:px-6 sm:pb-24 lg:max-w-8xl xl:max-w-[100vw] lg:pl-0 lg:pr-0">
+      <div id="PRODUCT-PAGE_MAIN"className="mx-auto  pt-2 sm:pt-12 sm:!pt-0 min-lg:max-w-xl pb-16 sm:px-6 sm:pb-24 lg:max-w-8xl xl:max-w-[100vw] lg:pl-0 lg:pr-0">
       {/* <div className="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8"> */}
         
         <div className="">
@@ -383,7 +383,7 @@ export default function ProductPage({product}) {
          
         </div>
         <div className="bg-[#191a1b00] pb-24">
-        <div className="mx-w-auto relative px-6 xl:grid lg:grid-cols-10 lg:gap-x-12 pt-12 sm:pt-[6rem] sm:mx-[0%] xl:mx-[15%] min-[1400px]:mx-[15.5%] bg-black ">
+        <div className="xl:mt-20 mx-w-auto max-w-[624px]:px-[4%]  max-w-[1024px]:px-[8%] relative px-6 xl:grid lg:grid-cols-10 lg:gap-x-12 pt-12 sm:pt-[6rem] sm:mx-[0%] xl:mx-[9.5%] min-[1400px]:mx-[12.5%] bg-black ">
          <div className="mt-8 lg:col-span-5 lg:pl-0  className={`${geistSans.variable} ${geistMono.variable} antialiased`">
             <form>
               <div className="sm:mt-8">
@@ -455,7 +455,7 @@ export default function ProductPage({product}) {
               </div>
             </div>
         </div>
-        <div aria-labelledby="reviews-heading" className="pt-8 px-8 lg::mt-4 sm:pt-10 xl:mx-[15%] min-[1400px]:mx-[15.5%] bg-black">       
+        <div aria-labelledby="reviews-heading" className="pt-8 px-8 lg::mt-4 sm:pt-10 xl:mx-[9.5%] min-[1400px]:mx-[12.5%] bg-black">       
             <h2 className="text-3xl text-white py-4">
                  {product.participants.length}   Track Participants
                   </h2>
@@ -476,7 +476,7 @@ export default function ProductPage({product}) {
 
    {/* RECENT Reviews */}
         <div aria-labelledby="reviews-heading" 
-        className="max-lg:px-6 pt-6 lg::mt-4 sm:pt-10 xl:mx-[15%] min-[1400px]:mx-[17%] bg-black">
+        className="max-lg:px-6 pt-6 lg::mt-4 sm:pt-10 xl:mx-[9.5%] min-[1400px]:mx-[17%] bg-black">
 
           <div className="py-12">
             <h2 id="reviews-heading" className="!text-5xl lg:text-2xl xl:text-3xl font-medium text-gray-900 text-white dark:text-gray-200 ">

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node build-error-detector.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -81,7 +81,8 @@
     "use-debounce": "^9.0.3",
     "webpack": "^5",
     "zod": "^3.18.0",
-    "zustand": "^4.5.0"
+    "zustand": "^4.5.0",
+    "next-view-transitions": "^0.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",

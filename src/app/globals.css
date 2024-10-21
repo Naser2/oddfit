@@ -2071,3 +2071,112 @@ comp-kkr5cchz {
   --tw-gradient-to: rgb(219 234 254 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+
+#www-navigation-container {
+  position: fixed;
+  top: 0;
+  z-index: 900;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  -webkit-transition: background-color .5s cubic-bezier(.165,.84,.44,1);
+  transition: background-color .5s cubic-bezier(.165,.84,.44,1);
+  background-color: transparent;
+  will-change: background-color;
+}
+body.mobile-menu-open {
+  overflow: hidden;
+  background-color: #000;
+}
+#www-navigation-container.is-open .www-navigation__mobile__menu-wrapper {
+  overflow-y: scroll;
+}
+
+#www-navigation-container .www-navigation__mobile__menu-wrapper {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 92px;
+}
+#www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>:nth-child(1) {
+  -webkit-transition-delay: .32s;
+  transition-delay: .32s;
+}
+
+#www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>div, #www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>a {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: opacity .8s cubic-bezier(.165,.84,.44,1), -webkit-transform .8s cubic-bezier(.165,.84,.44,1);
+  transition: opacity .8s cubic-bezier(.165,.84,.44,1), -webkit-transform .8s cubic-bezier(.165,.84,.44,1);
+  transition: opacity .8s cubic-bezier(.165,.84,.44,1), transform .8s cubic-bezier(.165,.84,.44,1);
+  transition: opacity .8s cubic-bezier(.165,.84,.44,1), transform .8s cubic-bezier(.165,.84,.44,1), -webkit-transform .8s cubic-bezier(.165,.84,.44,1);
+}
+#www-navigation-container .www-navigation__mobile__menu-wrapper>div, #www-navigation-container .www-navigation__mobile__menu-wrapper>a {
+  opacity: 0;
+  -webkit-transform: translateY(-2.5vw);
+  transform: translateY(-2.5vw);
+  -webkit-transition: opacity .5s step-end, -webkit-transform .5s step-end;
+  transition: opacity .5s step-end, -webkit-transform .5s step-end;
+  transition: opacity .5s step-end, transform .5s step-end;
+  transition: opacity .5s step-end, transform .5s step-end, -webkit-transform .5s step-end;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+#www-navigation-container .www-navigation__mobile__menu, #www-navigation-container .www-navigation__mobile__menu-link {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 20px;
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1em;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+  text-transform: none;
+  text-decoration: none;
+  font-size: 28px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#www-navigation-container.is-open .www-navigation__mobile__menu-content {
+  pointer-events: auto;
+  visibility: visible;
+  -webkit-transition: visibility .6s step-start;
+  transition: visibility .6s step-start;
+  -webkit-animation: swipeIn .6s cubic-bezier(.165,.84,.44,1) forwards;
+  animation: swipeIn .6s cubic-bezier(.165,.84,.44,1) forwards;
+}
+
+#www-navigation-container .www-navigation__mobile__menu-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #000;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  -webkit-transition: visibility .6s step-end;
+  transition: visibility .6s step-end;
+  -webkit-animation: swipeOut .6s cubic-bezier(.165,.84,.44,1) forwards;
+  animation: swipeOut .6s cubic-bezier(.165,.84,.44,1) forwards;
+}

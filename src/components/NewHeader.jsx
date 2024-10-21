@@ -1,4 +1,6 @@
-'use client'
+"use client";
+
+import React, { useEffect, useState } from 'react';
 
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
@@ -17,11 +19,11 @@ import {
 import { Container } from '@/components/Container'
 // import avatarImage from '../../public/amit-avatar.jpg'
 
-import { Fragment, useEffect, useRef, useState } from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
 // import ToggleICon from './ToggleIcon'
-import { SocialMedia } from './SocialMedia'
+// import { SocialMedia } from './SocialMedia'
 import { usePathname } from 'next/navigation'
 
 function CloseIcon(props) {
@@ -56,31 +58,8 @@ function ChevronDownIcon(props) {
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-// {item.name  === "Profile" ? <div class="d-flex z-40">
-//       <img data-component="Avatar"
-//        alt="" size="32"  src="https://avatars.githubusercontent.com/u/20908727?v=4&amp;size=64" data-testid="github-avatar" height="32" width="32" class="Avatar__StyledAvatar-sc-2lv0r8-0 evohuZ"/>
-//          <div class="lh-condensed overflow-hidden d-flex flex-column flex-justify-center ml-2 f5 mr-auto">
-//            <div class="text-bold"><div title="Naser2" class="Truncate__StyledTruncate-sc-23o1d2-0 fWcxCG">
-//            Naser2
-//          </div>
-//        </div>
-//      <div class="fgColor-muted">
-//     <div title="Nas" class="Truncate__StyledTruncate-sc-23o1d2-0 fWcxCG">
-//      Nas
-//  </div>
-// </div>
-// </div>
-// </div>:
-const oldnav= [
-  { name: "Project", href: "/naser2s-projects/omarihills" },
-  { name: "Deployments", href: "/naser2s-projects/omarihills/deployments" },
-  { name: "Analytics", href: "/naser2s-projects/omarihills/analytics" },
-  { name: "Speed Insights", href: "/naser2s-projects/omarihills/speed-insights" },
-  { name: "Logs", href: "/naser2s-projects/omarihills/logs" },
-  { name: "Firewall", href: "/naser2s-projects/omarihills/firewall" },
-  { name: "Storage", href: "/naser2s-projects/omarihills/stores" },
-  { name: "Settings", href: "/naser2s-projects/omarihills/settings" },
-];
+
+
 const navLinks= [
   {name:'Subscription', 
  href:'/subscription'},
@@ -117,46 +96,9 @@ const SecondNavMenu = () => (
 );
 
 
-// function MobileNavItem({ href, children }) {
-//   return (
-//      <li className='relative h-12  w-full'> 
 
-//       <label  htmlFor="nav-menu-toggle" className='w-full'>
-   
-//       <Link 
-//         // as={Link}
-//         href={href}
-//         className="text-white dark:text-[var(--themeColor)] block my-8 text-2xl uppercase dark:hover:text-white "
-//       >
-//           <input
-//           type="checkbox"
-//           className="nav__toggle-checkbox absolute top-0 inset-x-0 h-full !w-full !min-h-12 "
-//           id="nav-menu-toggle"
-//             /> {children}
-//       </Link>
-//     </label>
-//     </li>
-//   )
-// }
 
-// function MobileNavItem({ href, handleNavItemClick, classN, textStyle, active, children }) {
-
-//   const handleClick = () => {
-//     // Uncheck the nav toggle checkbox
-//     setIsNavOpen(false);
-//   };
-
-//   return (
-//     <li className={clsx(classN && classN,"relative w-full sm:h-full  justify-center sm:-mt-[1%] !pl-[4%] sm:border-r border-black dark:!group-hover:text-white")}
-//     onClick={()=>handleNavItemClick(false)}>
-//       <Link href={href} className={clsx(textStyle && textStyle,"text-white  block py-8 sm:py-4 text-2xl uppercase dark:hover:text-white")}>
-//         {children}
-//       </Link>
-//     </li>
-//   );
-// }
-
-function MobileNavItem({ href, handleNavItemClick, classN, textStyle, activeColor, children }) {
+export function MobileNavItem({ href, handleNavItemClick, classN, textStyle, activeColor, children }) {
   const router = usePathname();
   const [activePath, setActivePath] = useState('');
 
@@ -187,139 +129,75 @@ function MobileNavItem({ href, handleNavItemClick, classN, textStyle, activeColo
   );
 }
 
-export default MobileNavItem;
+
 const transparent =
   'group flex items-center rounded-sm  py-2 text-sm font-medium backdrop-blur'
 
 
-// function MobileNavigation(props) {
+
+function NavItem({ href, children }) {
+//   let isActive = usePathname().pathname === href
+
 //   return (
-//     <Popover {...props} className={props.navButtonPossition}>
-//       <Popover.Button id="MENU_AS_CONTAINER_TOGGLE"
-//         className="md:!hidden group flex items-center  rounded-sm px-2 backdrop-blur mt-1  "
+//     <li className={clsx( isActive && 'btn--yellow', 'nav-item-box  bg-[#ffe2b5]')}>
+//       <Link
+//         href={href}
+//         className={clsx(
+//           'nav-item relative block px-6 text-black transition dark:text-white !py-4',
+//           isActive ? '!text-black dark:hover:bg-[#ffe2b5]' : 'hover:text-gray-400 '
+//         )}
 //       >
-//         <Bars />
-//         {/* <ChevronDownIcon className="ml-3  h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700" /> */}
-//       </Popover.Button>
-//       <Transition.Root>
-//         <Transition.Child
-//           as={Fragment}
-//           enter="duration-150 ease-out"
-//           enterFrom="opacity-0"
-//           enterTo="opacity-100"
-//           leave="duration-150 ease-in"
-//           leaveFrom="opacity-100"
-//           leaveTo="opacity-0"
-//         >
-//           <Popover.Overlay className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm " />
-//         </Transition.Child>
-//         <Transition.Child
-//           as={Fragment}
-//           enter="duration-150 ease-out"
-//           enterFrom="opacity-0 scale-95"
-//           enterTo="opacity-100 scale-100"
-//           leave="duration-150 ease-in"
-//           leaveFrom="opacity-100 scale-100"
-//           leaveTo="opacity-0 scale-95"
-//         >
-//           <Popover.Panel
-//             focus
-//             className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-[[var(--themeColor)] "
-//           >
-//             <div className="flex flex-row-reverse items-center justify-between">
-//               <Popover.Button
-//                 aria-label="Close menu"
-//                 className="-m-1 rounded-full border dark:border-[var(--themeColor2)] p-1"
-//               >
-//                 <CloseIcon className="text-white h-6 w-6  outline-none dark:text-zinc-400" />
-//               </Popover.Button>
-//               {/* <h2 className="!text-white text-sm font-medium   dark:text-zinc-400 ">
-//                 Menu
-//               </h2> */}
-//             </div>
-//             <nav id="mobile-navigation" className="mt-6 nav__wrapper">
-//               <ul className="-my-2 divide-y divide-zinc-100 dark:divide-[var(--themeColor)] text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-//                 <MobileNavItem href="/">Home</MobileNavItem>
-//                 <MobileNavItem href="/exercises">Exercises</MobileNavItem>
-//                 <MobileNavItem href="/about">About</MobileNavItem>
-//                 <MobileNavItem href="/diets">Diets</MobileNavItem> 
-//                 <MobileNavItem href="/programs">Programs</MobileNavItem>
-                
-//                 {/* <MobileNavItem href="/fitness">Fitness</MobileNavItem> */}
-               
-//                 <MobileNavItem href="/contact">Contact</MobileNavItem>
-//               </ul>
-//             </nav>
-//           </Popover.Panel>
-//         </Transition.Child>
-//       </Transition.Root>
-//     </Popover>
+//         {children}
+//         {isActive && (
+//           <span className="absolute inset-x-1 -bottom-px h-1 bg-gradient-to-r from-teal-500 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+//         )}
+//       </Link>
+//     </li>
 //   )
 // }
 
-function NavItem({ href, children }) {
-  let isActive = usePathname().pathname === href
-
-  return (
-    <li className={clsx( isActive && 'btn--yellow', 'nav-item-box  bg-[#ffe2b5]')}>
-      <Link
-        href={href}
-        className={clsx(
-          'nav-item relative block px-6 text-black transition dark:text-white !py-4',
-          isActive ? '!text-black dark:hover:bg-[#ffe2b5]' : 'hover:text-gray-400 '
-        )}
-      >
-        {children}
-        {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-1 bg-gradient-to-r from-teal-500 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
-        )}
-      </Link>
-    </li>
-  )
-}
-
-function DesktopNavigation(props) {
-  return (
-    <nav {...props} id="SITE_HEADER" className={clsx(props.navButtonPossition)}>
-      <ul className="flex rounded-sm text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-400/5 backdrop-blur  
-      hover:shadow-zinc-900/5 dark:text-zinc-200 dark:ring-white/10  justify-center text-center content-center">
-        <NavItem href="/">Home</NavItem>
-        <NavItem href="/exercises">Exercises</NavItem> 
-          <NavItem href="/about">About</NavItem>
-        <NavItem href="/therappies">Therapies</NavItem>   
-          <NavItem href="/contact">Contact</NavItem>
-        {/* <NavItem href="/fitness">Fitness</NavItem> */}
-        {/* <NavItem href="/meditation">Meditation</NavItem> */}
+// function DesktopNavigation(props) {
+//   return (
+//     <nav {...props} id="SITE_HEADER" className={clsx(props.navButtonPossition)}>
+//       <ul className="flex rounded-sm text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-400/5 backdrop-blur  
+//       hover:shadow-zinc-900/5 dark:text-zinc-200 dark:ring-white/10  justify-center text-center content-center">
+//         <NavItem href="/">Home</NavItem>
+//         <NavItem href="/exercises">Exercises</NavItem> 
+//           <NavItem href="/about">About</NavItem>
+//         <NavItem href="/therappies">Therapies</NavItem>   
+//           <NavItem href="/contact">Contact</NavItem>
+//         {/* <NavItem href="/fitness">Fitness</NavItem> */}
+//         {/* <NavItem href="/meditation">Meditation</NavItem> */}
    
-        {/* <NavItem href="/prices">Prices</NavItem> */}
-        <NavItem href="/learn">Learn</NavItem>
+//         {/* <NavItem href="/prices">Prices</NavItem> */}
+//         <NavItem href="/learn">Learn</NavItem>
      
-      </ul>
-    </nav>
-  )
-}
+//       </ul>
+//     </nav>
+//   )
+// }
 
-function ModeToggle() {
-  function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
-    }, 0)
-  }
+// function ModeToggle() {
+//   function disableTransitionsTemporarily() {
+//     document.documentElement.classList.add('[&_*]:!transition-none')
+//     window.setTimeout(() => {
+//       document.documentElement.classList.remove('[&_*]:!transition-none')
+//     }, 0)
+//   }
 
-  function toggleMode() {
-    disableTransitionsTemporarily()
+  // function toggleMode() {
+  //   disableTransitionsTemporarily()
 
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
+  //   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  //   let isSystemDarkMode = darkModeMediaQuery.matches
+  //   let isDarkMode = document.documentElement.classList.toggle('dark')
 
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    } else {
-      window.localStorage.isDarkMode = isDarkMode
-    }
-  }
+  //   if (isDarkMode === isSystemDarkMode) {
+  //     delete window.localStorage.isDarkMode
+  //   } else {
+  //     window.localStorage.isDarkMode = isDarkMode
+  //   }
+  // }
 
   return (
     <div
@@ -476,7 +354,7 @@ const DesktopTitle = () => {
         </div>
 
         <div id="desktop-cred" className="-ml-8 sm:mt-6">
-          <SocialMedia className={'flex gap-x-2 gap-y-4'} iconStyle="" />
+          {/* <SocialMedia className={'flex gap-x-2 gap-y-4'} iconStyle="" /> */}
         </div>
       </div>
       <Link
@@ -497,37 +375,6 @@ const DesktopTitle = () => {
 }
 
 
-
-// export function NewHeader() {
-//   const [isScrollingUp, setIsScrollingUp] = useState(false);
-//   const [isTop, setIsTop] = useState(true);
-//   const [lastScrollTop, setLastScrollTop] = useState(0);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const st = window.scrollY || document.documentElement.scrollTop;
-
-//       if (st > lastScrollTop) {
-//         // Downscroll code
-//         setIsScrollingUp(false);
-//       } else {
-//         // Upscroll code
-//         if (st > 0) {
-//           setIsScrollingUp(true);
-//         }
-//         if (st === 0 || st <= 5) {
-//           setIsTop(true);
-//         } else {
-//           setIsTop(false);
-//         }
-//       }
-//       setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
-//     };
-
-//     window.addEventListener('scroll', handleScroll, { passive: true });
-
-//     return () => window.removeEventListener('scroll', handleScroll);
-//   }, [lastScrollTop]);
 export function NewHeader() {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isTop, setIsTop] = useState(true);
@@ -662,7 +509,11 @@ export function NewHeader() {
                <div className="block max-[490px]:mt-[3vh] !z-50 ">
                 <ul id="menu-primary-navigation" className="menu dark:!text-white sm:flex  w-full group !pb-[3%]" >
                   {navigation.map((navlink, index )=>
-                  <MobileNavItem  key={index} href={navlink.href} handleNavItemClick={handleNavItemClick} classN={'flex h-[89px] lg:h-[2rem] lg:pt--[.9rem] lg:mt-[-30px] max-[640px]:bg-black py-4 mb-5'} textStyle={'dark:text-[var(--themeColorGray1)]'} activeColor={'!text-white'}>{navlink.name} </MobileNavItem>)}
+                  <MobileNavItem  key={index} href={navlink.href} handleNavItemClick={handleNavItemClick}
+                   classN={'flex h-[89px] lg:h-[2rem] lg:pt--[.9rem] lg:mt-[-30px] max-[640px]:bg-black py-4 mb-5'}
+                    textStyle={'dark:text-[var(--themeColorGray1)]'}
+                     activeColor={'!text-white'}>{navlink.name}
+                      </MobileNavItem>)}
                 {/* <li
                     // onMouseEnter={() => setIsSocialVisible(true)}
                     // onMouseLeave={() => setIsSocialVisible(false)}
@@ -966,6 +817,7 @@ const DinamicElements = () => {
 }
 
 
+export default NewHeader;
 const navigation = {
   categories: [
     {

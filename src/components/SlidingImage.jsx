@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef} from 'react';
 import Image from 'next/image';
 import  { urlFor } from "@/sanity/lib/image.js";

@@ -6,6 +6,7 @@ import imageUrlBuilder from '@sanity/image-url';
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '', // Make sure this matches your deployed studio project ID
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'omairillbackend', // This should be 'omairillbackend'
+  apiVersion:process.env.NEXT_PUBLIC_SANITY_API_VERSION,
   useCdn: true,
 });
 console.log("IMAGES_MANIFEST", process.env.NEXT_PUBLIC_SANITY_DATASET, "projectId", process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);

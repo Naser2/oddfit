@@ -1,4 +1,6 @@
-import { useState } from 'react'
+'use client'
+
+// import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 // import image1 from '@/images/about-images/Cam1.png'
 // import image2 from '@/images/about-images/Cam2.png'
@@ -11,8 +13,12 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { PlayButton } from './PlayButton'
 import { Carousel } from './carousel/Corousel'
+
+
+
+
 export default function LandingIntro() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div id="intro" className="md:-mt-30 relative -mt-44 ">
