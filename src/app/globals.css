@@ -2088,7 +2088,7 @@ body.mobile-menu-open {
   overflow: hidden;
   background-color: #000;
 }
-#www-navigation-container.is-open .www-navigation__mobile__menu-wrapper {
+#www-navigation-container .www-navigation__mobile__menu-wrapper {
   overflow-y: scroll;
 }
 
@@ -2106,12 +2106,12 @@ body.mobile-menu-open {
   flex-direction: column;
   padding-top: 92px;
 }
-#www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>:nth-child(1) {
+#www-navigation-container .www-navigation__mobile__menu-wrapper>:nth-child(1) {
   -webkit-transition-delay: .32s;
   transition-delay: .32s;
 }
 
-#www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>div, #www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>a {
+#www-navigation-container .www-navigation__mobile__menu-wrapper>div, #www-navigation-container.is-open .www-navigation__mobile__menu-wrapper>a {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
@@ -2148,7 +2148,7 @@ body.mobile-menu-open {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#www-navigation-container.is-open .www-navigation__mobile__menu-content {
+#www-navigation-container .www-navigation__mobile__menu-content {
   pointer-events: auto;
   visibility: visible;
   -webkit-transition: visibility .6s step-start;

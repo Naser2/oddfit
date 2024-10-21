@@ -7,7 +7,8 @@ import localFont from "next/font/local";
 import  Footer  from '@/components/Footer'
 // import '../styles/tailwind.css'
 import 'focus-visible'
-import { NewHeader } from '../components/NewHeader'
+// import { NewHeader } from '../components/NewHeader'
+import NewHeadercopy from '../components/NewHeadercopy'
 
 // import { useEffect, useRef } from "react";
 
@@ -51,7 +52,8 @@ export default function RootLayout({
  
         {/* <ViewTransitions> */}
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-[100vh]`}>
-           <NewHeader />  
+           {/* <NewHeader />   */}
+           <NewHeadercopy/>
             {children}
           </body> 
           <Footer/> 

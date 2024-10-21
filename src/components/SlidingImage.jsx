@@ -37,7 +37,7 @@ const SlidingImage = ({hero}) => {
   return (
     <div
       id="bgMedia_comp-kkr1kfyd"
-      className="SUz0WK !w-full !object-cover -mb-14 sm:!h-[100vh] z-20"
+      className="SUz0WK !w-full !object-cover -mb-14 lg:mt-[-10em]   mt-[-2em] sm:!h-[100vh] z-20"
       data-container-id="comp-kkr1kfyd"
       data-container-size="0, 0"
       data-page-id="c1dmp"
@@ -54,7 +54,8 @@ const SlidingImage = ({hero}) => {
       <div id="img_slide-in" 
            ref={imgRef}>
         <Image
-          className="object-cover h-[1237px] -mt-6 sm:!-mt-0 -mb-64 !h-[140vh-pt-[4em] -pr-24 sm:pt-[0em] !w-[120%] sm:!h-[170vh] sm:w-full aspect-[68/10] xl:pl-[23em] transition-transform duration-1000"
+          className="object-cover h-[1237px] 
+          -mt-5 sm:!-mt-0 -mb-64 !h-[120vh] -pr-24 sm:pt-[0em] !w-[120%] sm:!h-[170vh] sm:w-full aspect-[68/10] xl:pl-[23em] transition-transform duration-1000"
           src={urlFor(hero.banner).url()}
           alt=""
           style={{ height: 1069, objectFit: "cover" }}

@@ -481,11 +481,7 @@ export function NewHeader() {
               checked={isNavOpen}
               onChange={handleNavToggle}
             />
-            {/* <input
-              type="checkbox"
-              className="nav__toggle-checkbox "
-              id="nav-menu-toggle"
-            /> */}
+          
             <label  
             //  style={{ transition: '.4s'}}
               htmlFor="nav-menu-toggle"
@@ -502,9 +498,9 @@ export function NewHeader() {
               </div>
               <div  className={clsx(`${isTop  &&  "lg:!pt-[1%]"} w-full flex-block ${isScrollingUp ?  'max-[640px]:!mt-[8em]'  : " !pb-[4%] lg:!pt-[0%] lg:grid "} ${isSocialVisible ? 'lg:!py-[2.6%]' : 'lg:!py-[1%]'} `)} style={{ transition: '2s !important' }}>
    
-        {/* <Bars /> */}
-        {/* <ChevronDownIcon className="ml-3  h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700" /> */}
-  
+            {/* <Bars /> */}
+            {/* <ChevronDownIcon className="ml-3  h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700" /> */}
+      
   
                <div className="block max-[490px]:mt-[3vh] !z-50 ">
                 <ul id="menu-primary-navigation" className="menu dark:!text-white sm:flex  w-full group !pb-[3%]" >
@@ -525,39 +521,39 @@ export function NewHeader() {
                     </Link>
                   </li> */}
                 </ul>
-<div className={clsx(isTop ? "sm:h-12" : "sm:pt-[1.3%]", "border-t border-[#ffffff25] paradigms  w-full groupmax-[640px]:py-0 max-[640px]:pb-4")}>
-  <div className="stack_stack__iZkUS stack sub-menu_container__C2u_O" data-testid="navbar/submenu" data-version="v1" style={{ "--stack-flex": "initial", "--stack-direction": "row", "--stack-align": "center", "--stack-justify": "flex-start", "--stack-padding": "0px", "--stack-gap": "0px" }}>
-  <div className="sub-menu_subMenu__zImHF !z-50 !h-[3.2em] py-5" style={{ transform: "translateX(36px) translateZ(0px)" }}>
-    <SecondNavMenu/>
-    {/* <a data-version="v1" data-sub-menu-segment="(overview)" data-zone="same"
-     className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5 " href="/naser2s-projects/omarihills" style={{ "--text-color": "var(--ds-gray-1000)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Project
-    </a>
-    <a data-version="v1" data-sub-menu-segment="deployments" data-zone="same"
-     className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/deployments" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Deployments
-    </a>
-    <a data-version="v1" data-sub-menu-segment="analytics" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/analytics" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Analytics
-    </a>
-    <a data-version="v1" data-sub-menu-segment="speed-insights" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/speed-insights" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Speed Insights
-    </a>
-    <a data-version="v1" data-sub-menu-segment="logs" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/logs" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Logs
-    </a>
-    <a data-version="v1" data-sub-menu-segment="firewall" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/firewall" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Firewall
-    </a>
-    <a data-version="v1" data-sub-menu-segment="stores" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/stores" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Storage
-    </a>
-    <a data-version="v1" data-sub-menu-segment="settings" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/settings" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
-      Settings
-    </a> */}
-    <div className="sub-menu_activeBar__Zj0Fh" style={{ transform: "translateX(16px) scaleX(0.7)", display: "block" }}></div>
-  </div>
-</div>
+              <div className={clsx(isTop ? "sm:h-12" : "sm:pt-[1.3%]", "border-t border-[#ffffff25] paradigms  w-full groupmax-[640px]:py-0 max-[640px]:pb-4")}>
+                <div className="stack_stack__iZkUS stack sub-menu_container__C2u_O" data-testid="navbar/submenu" data-version="v1" style={{ "--stack-flex": "initial", "--stack-direction": "row", "--stack-align": "center", "--stack-justify": "flex-start", "--stack-padding": "0px", "--stack-gap": "0px" }}>
+                <div className="sub-menu_subMenu__zImHF !z-50 !h-[3.2em] py-5" style={{ transform: "translateX(36px) translateZ(0px)" }}>
+                  <SecondNavMenu/>
+                  {/* <a data-version="v1" data-sub-menu-segment="(overview)" data-zone="same"
+                  className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5 " href="/naser2s-projects/omarihills" style={{ "--text-color": "var(--ds-gray-1000)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Project
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="deployments" data-zone="same"
+                  className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/deployments" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Deployments
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="analytics" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/analytics" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Analytics
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="speed-insights" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/speed-insights" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Speed Insights
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="logs" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/logs" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Logs
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="firewall" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/firewall" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Firewall
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="stores" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/stores" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Storage
+                  </a>
+                  <a data-version="v1" data-sub-menu-segment="settings" data-zone="same" className="!text-white link_link__hbWKh text_wrapper__i87JK sub-menu-link_link__FJz2m -mt-5" href="/naser2s-projects/omarihills/settings" style={{ "--text-color": "var(--ds-gray-900)", "--text-size": "0.875rem", "--text-line-height": "0.875rem", "--text-letter-spacing": "initial", "--text-weight": 400 }}>
+                    Settings
+                  </a> */}
+                  <div className="sub-menu_activeBar__Zj0Fh" style={{ transform: "translateX(16px) scaleX(0.7)", display: "block" }}></div>
+                </div>
+              </div>
 
                
                 {/* <ul id="menu-primary-navigation" className="!z-50 menu dark:!text-white sm:flex w-full group !bg-white" >

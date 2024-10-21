@@ -193,7 +193,7 @@ export default function Home() {
       {/* <SearchParamsComponent/> */}
       {/* <AsyncComponent homePageData={homePageData} tracks={tracks} /> */}
       <div>
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen lg:p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <div className="z-20 grid lg:grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen lg:p-8 pb-20 lg:gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
       <div className="relative w-screen overflow-hidden ">
         <div
