@@ -73,7 +73,7 @@ const AnimatedComponent = ({ textToScaleDown, break: shouldBreak}) => {
       data-testid="mesh-container-content"
     >
       <div id="comp-kkr1o0a8"
-        className={`HcOXKn c9GqVL QxJLC3 comp-kkr1o0a8 wixui-rich-text !px-[18%] ${paddingClass}`}
+        className={`HcOXKn c9GqVL QxJLC3 comp-kkr1o0a8 wixui-rich-text !px-[8%] lg:!px-[18%] ${paddingClass}`}
         data-testid="richTextElement"
       >
         <h1 className="font_0 wixui-rich-text__text">
@@ -136,7 +136,7 @@ const AnimatedComponent = ({ textToScaleDown, break: shouldBreak}) => {
             href='/login'
           
           >
-           Register
+           Get started
           </Link>
        
         </div> 

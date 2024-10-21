@@ -11,11 +11,11 @@ function ResetPasswordContent() {
   const [successMessage, setSuccessMessage] = useState("");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const supabase = createClient();
+);
 
   const code = searchParams.get("code");
 
-  const handleResetPassword = async (e) => {
+  const handleResetPassword = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -29,7 +29,7 @@ function ResetPasswordContent() {
     }
 
     console.log("RESSET-CODE: " ,  code);
-    const { error } = await supabase.auth.updateUser({
+    const { error } = await createClient.auth.updateUser({
       // access_token: code,
       password,
     });

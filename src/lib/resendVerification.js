@@ -1,9 +1,9 @@
 import { createClient } from '@/utils/supabase/client'; // Adjust depending on your setup
 
-const supabase = createClient();
+
 
 const resendVerification = async (email) => {
-  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+  const { error } = await createClient.auth.resetPasswordForEmail(email, {
     redirectTo: 'https://your-app-url.com/auth-confirmation', // Redirect after confirmation
   });
 
