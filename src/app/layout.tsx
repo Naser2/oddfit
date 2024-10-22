@@ -1,5 +1,5 @@
 
-import { ViewTransitions } from 'next-view-transitions';
+// import { ViewTransitions } from 'next-view-transitions';
 import "./globals.css";
 import { Metadata } from 'next';
 
