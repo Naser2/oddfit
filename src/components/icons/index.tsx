@@ -8,7 +8,7 @@ export { default as EditIcon } from './edit';
 export { default as DirectoryIcon } from './directory';
 export { default as GitHubIcon } from './github';
 export { default as AlertCircleIcon } from './alert-circle'
-export { default as LifetimeIcon } from './LifetimeIcon.jsx';
+export { default as LifetimeIcon } from './LifetimeIcon';
 export { default as LotsOfContentIcon } from './LotsOfContentIcon.jsx';
 export { default as MapPinIcon } from './map-pin';
 export { default as MedusaIcon } from './medusa';

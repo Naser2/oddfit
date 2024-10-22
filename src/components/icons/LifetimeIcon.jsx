@@ -1,6 +1,6 @@
 
 
-function LifetimeIcon(){
+export default function LifetimeIcon(){
    return  (<svg className="absolute inset-0 h-full w-full z-10 [mask-image:linear-gradient(to_top,white,transparent)]"
         xmlns="http://www.w3.org/2000/svg"
         >
