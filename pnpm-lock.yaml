@@ -167,6 +167,9 @@ importers:
       react-map-gl:
         specifier: ^7.1.7
         version: 7.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-merge-refs:
+        specifier: ^2.1.1
+        version: 2.1.1
       react-photoswipe-gallery:
         specifier: ^3.0.1
         version: 3.0.2(photoswipe@5.4.4)(prop-types@15.8.1)(react@18.3.1)
@@ -6237,6 +6240,9 @@ packages:
         optional: true
       maplibre-gl:
         optional: true
+
+  react-merge-refs@2.1.1:
+    resolution: {integrity: sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==}
 
   react-photoswipe-gallery@3.0.2:
     resolution: {integrity: sha512-TLkpzp2BSUUL/4GPRU5SQWXfJ8xuUBKgS8qUaHyhsT1co6CStr1mVCl4oQrSSFbWxAKhB5fHbr12l1R+TkqFcQ==}
@@ -14847,6 +14853,8 @@ snapshots:
       '@types/mapbox-gl': 3.4.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  react-merge-refs@2.1.1: {}
 
   react-photoswipe-gallery@3.0.2(photoswipe@5.4.4)(prop-types@15.8.1)(react@18.3.1):
     dependencies:
