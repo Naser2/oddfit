@@ -2,7 +2,7 @@
 
 // import { ViewTransitions } from 'next-view-transitions';
 import "./globals.css";
-import { Metadata } from 'next';
+// import { Metadata } from 'next';
 
 import localFont from "next/font/local";
 import  Footer  from '@/components/Footer'
@@ -36,10 +36,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "ODFIT",
-  description: "A WEB APP FOR THOSE THINGS YOU CANT BUY",
-};
+// export const metadata: Metadata = {
+//   title: "ODFIT",
+//   description: "A WEB APP FOR THOSE THINGS YOU CANT BUY",
+// };
 
 
 
