@@ -1,7 +1,7 @@
 
 import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
-import ProductPage from '@/components/ProductPage'
+import ProductPage from '../../../components/ProductPage'
 import localFont from "next/font/local";
 
 
@@ -44,10 +44,7 @@ export default async function ExercisePage({ params }) {
   return (
     <div >
           <ProductPage product={track}/>
-      {/* <h1>{exerciseData.title}</h1>
-      <p>{exerciseData.description}</p> */}
-      {/* <ExerciseCard  exercise={exercise}/> */}
-      {/* Display more exercise data as needed */}
+      
     </div>
   );
 }

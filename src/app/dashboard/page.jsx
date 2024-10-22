@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { redirect } from 'next/dist/server/api-utils';
 import { useRouter } from 'next/navigation';
-import TrackProgress from '@/components/TrackProgress';
+import TrackProgress from '../../components/TrackProgress';
 // import ProfileComponent from '../../components/ProfileComponent/index'
 
 

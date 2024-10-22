@@ -13,13 +13,13 @@ import Image from 'next/image'
 // import getById from '@/lib/getById'
 // import { ReikiMasterIcon } from '@/components/OmariMasterIcon'
 import clsx from 'clsx'
-import { Goback } from '@/components/Goback'
-import ProductTabs from '@/components/product-tabs'
+// import { Goback } from '@/components/Goback'
+// import ProductTabs from '@/components/product-tabs'
 // import  fetchExercices  from '../../../api/fetchExercices'
 const placeholderImage = './placeholder.png';
 
 import { urlFor } from "@/sanity/lib/image.js";
-import { constants } from 'buffer'
+// import { constants } from 'buffer'
 
 // import { Accordion } from '@radix-ui/react-accordion'
 import { AccordionCard } from '@/components/reusables/Accordion'

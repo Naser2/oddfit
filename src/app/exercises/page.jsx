@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Page from "@/components/Page"; 
-import fetchExercices from "@/api/fetchExercices"; // Ensure the path is correct
+import fetchExercices from "../api/fetchExercices"; // Ensure the path is correct
 
 export default function Excercises() {
   const [exercises, setExercises] = useState([]);

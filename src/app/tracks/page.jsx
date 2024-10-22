@@ -2,20 +2,20 @@
 
 import Head from 'next/head'
 import clsx from 'clsx'
-import { Card, Tag } from '@/components/Card'
-import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import { Card, Tag } from '../../components/Card'
+import { FadeIn, FadeInStagger } from '../../components/FadeIn'
 import { getItems } from '@/lib/getItems'
 
 import { Container } from '@/components/Container'
 import Image from 'next/image'
 import Page from '@/components/Page'
 
-import { Carousel, ContentSlider } from '@/components/carousel/Corousel'
+import { Carousel, ContentSlider } from '../../components/carousel/Corousel'
 import Link from 'next/link'
 // import getTracks  from '../../../api/getTracks'
-import { urlFor } from "@/sanity/lib/image.js";
+import { urlFor } from "../../../sanity/lib/image";
 import { useEffect, useState } from 'react'
-import  getTracks  from '../../../api/getTracks.ts'
+import  getTracks  from '../api/getTracks.ts'
 
 
 export default function Tracks() {
