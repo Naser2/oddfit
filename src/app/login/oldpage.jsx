@@ -15,12 +15,12 @@ const AuthPage = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
-  const supabase = createClient();
+
 
   // Handle login
   const handleLogin = async (e) => {
     e.preventDefault();
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await createClient.auth.signInWithPassword({
       email,
       password,
     });

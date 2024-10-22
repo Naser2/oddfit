@@ -18,10 +18,10 @@ export default function ProfilePage() {
 
   useEffect(() => {
     async function fetchUserProfile() {
-      const supabase = createClient();
+
 
       // Get the authenticated user
-      const { data: userData, error: userError } = await supabase.auth.getUser();
+      const { data: userData, error: userError } = await createClient.auth.getUser();
 
       if (userError || !userData?.user) {
         setErrorMessage("Error loading authenticated user.");
@@ -112,8 +112,8 @@ const MemberDashboard = ({ userProfile }) => {
     // Fetch track data if a track_id exists
     const fetchTrackData = async () => {
       if (userProfile?.track_id) {
-        const supabase = createClient();
-        const { data, error } = await supabase
+       
+        const { data, error } = await createClient
           .from('tracks')
           .select('*')
           .eq('id', userProfile.track_id)

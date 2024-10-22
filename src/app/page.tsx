@@ -24,7 +24,7 @@ import AnimatedComponent from '@/components/AnimatedComponent'
 import SlidingImage from '@/components/SlidingImage'
 // import { fetchTracks } from '@/utils/fetchTracks'
 // import fetchTracks  from '../../api/getTracks'
-import fetchLandingPageData from '../../api/fetchLandingPageData' 
+import fetchLandingPageData from './api/fetchLandingPageData' 
 import  ElevatorPitch  from '@/components/ElevatorPitch'
 import Link from "next/link";
 import  getTracks  from '@/lib/getTracks'
