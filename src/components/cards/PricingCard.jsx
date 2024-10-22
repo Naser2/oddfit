@@ -4,7 +4,7 @@
 
 import { FadeIn } from '../FadeIn';
 import { useState, useEffect } from 'react';
-import { PersonalIcon, CheckIcon, LotsOfContentIcon, DesktopIcon, LifetimeIcon } from '../icons';
+import { PersonalIcon, CheckIcon, LotsOfContentIcon, DesktopIcon } from '../icons';
 import Link from 'next/link';
 import clsx from 'clsx';
 
@@ -154,7 +154,7 @@ const getCardTheme = (planType) => {
         textColor: "text-slate-900",
         buttonColor: "hover:bg-gray-600 bg-black",
         buttonTextColor: "text-white",
-        icon: <LifetimeIcon />
+        icon: <DesktopIcon />
       };
   }
 };

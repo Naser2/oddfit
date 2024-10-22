@@ -26,4 +26,4 @@ export default function LifetimeIcon(){
 
 
 
-export default  LifetimeIcon
+

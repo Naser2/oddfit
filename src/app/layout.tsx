@@ -1,3 +1,4 @@
+'use client'
 
 // import { ViewTransitions } from 'next-view-transitions';
 import "./globals.css";
