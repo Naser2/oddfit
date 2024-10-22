@@ -189,7 +189,7 @@ export default function Home() {
          
 
   return (
-  <div className="relative min-h-[100vh]">
+  <div id="skip" className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]">
       {/* <SearchParamsComponent/> */}
       {/* <AsyncComponent homePageData={homePageData} tracks={tracks} /> */}
       <div>
