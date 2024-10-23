@@ -26,8 +26,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const title = 'Next.js Subscription Starter';
-const description = 'Brought to you by Vercel, Stripe, and Supabase.';
+const title = 'Odfitt Training Platform';
+const description = 'Brought to you by VOmari Hill,The best Workouts for body methamorphosis';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getURL()),

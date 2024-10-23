@@ -28,8 +28,9 @@ export async function POST(req: Request) {
   let event: Stripe.Event;
 
   try {
-    if (!sig || !webhookSecret)
-      return new Response('Webhook secret not found.', { status: 400 });
+    if (!sig || !webhookSecret){
+      console.log('Webhook secret not found.')
+      return new Response('Webhook secret not found.', { status: 400 });}
     event = stripe.webhooks.constructEvent(body, sig, webhookSecret);
     console.log(`🔔  Webhook received: ${event.type}`);
   } catch (err: any) {
@@ -67,6 +68,7 @@ export async function POST(req: Request) {
         case 'checkout.session.completed':
           const checkoutSession = event.data.object as Stripe.Checkout.Session;
           if (checkoutSession.mode === 'subscription') {
+            console.log('Webhook subscription.')
             const subscriptionId = checkoutSession.subscription;
             await manageSubscriptionStatusChange(
               subscriptionId as string,
