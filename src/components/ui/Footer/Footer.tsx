@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Logo from '@/components/icons/Logo';
-import GitHub from '../../icons/GitHub';
+import GitHub from '@/components/icons/GitHub';
 
 export default function Footer() {
   return (
@@ -15,10 +15,44 @@ export default function Footer() {
             <span className="mr-2 border rounded-full border-zinc-700">
               <Logo />
             </span>
-            <span>ACME</span>
+            <span>ODFITT</span>
           </Link>
         </div>
         <div className="col-span-1 lg:col-span-2">
+        <ul className="flex flex-col flex-initial md:flex-1">
+            <li className="py-3 md:py-0 md:pb-4">
+              <Link
+                href="/"
+                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="py-3 md:py-0 md:pb-4">
+              <Link
+                href="/tracks"
+                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+              >
+                Tracks
+              </Link>
+            </li>
+            <li className="py-3 md:py-0 md:pb-4">
+              <Link
+                href="/exercises"
+                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+              >
+                Excersies
+              </Link>
+            </li>
+            <li className="py-3 md:py-0 md:pb-4">
+              <Link
+                href="/"
+                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+              >
+                Account
+              </Link>
+            </li>
+          </ul>
           <ul className="flex flex-col flex-initial md:flex-1">
             <li className="py-3 md:py-0 md:pb-4">
               <Link
@@ -30,7 +64,7 @@ export default function Footer() {
             </li>
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
+                href="/about"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
               >
                 About
@@ -44,18 +78,19 @@ export default function Footer() {
                 Careers
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/"
-                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
-              >
-                Blog
-              </Link>
-            </li>
+        
           </ul>
         </div>
         <div className="col-span-1 lg:col-span-2">
           <ul className="flex flex-col flex-initial md:flex-1">
+          <li className="py-3 md:py-0 md:pb-4">
+              <Link
+                href="/pricing"
+                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+              >
+                Pricing 
+              </Link>
+            </li>
             <li className="py-3 md:py-0 md:pb-4">
               <p className="font-bold text-white transition duration-150 ease-in-out hover:text-zinc-200">
                 LEGAL
@@ -93,12 +128,12 @@ export default function Footer() {
       <div className="flex flex-col items-center justify-between py-12 space-y-4 md:flex-row bg-zinc-900">
         <div>
           <span>
-            &copy; {new Date().getFullYear()} ACME, Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} ODFITT, Inc. All rights reserved.
           </span>
         </div>
         <div className="flex items-center">
-          <span className="text-white">Crafted by</span>
-          <a href="https://vercel.com" aria-label="Vercel.com Link">
+          <span className="text-white">Crafted by Nasser</span>
+          <a href="#" aria-label="nasser Link">
             <img
               src="/vercel.svg"
               alt="Vercel.com Logo"
