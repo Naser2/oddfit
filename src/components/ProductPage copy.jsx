@@ -659,7 +659,7 @@ export default function ProductPage() {
                   ·
                 </div>
                 <div className="ml-4 flex">
-                  <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="#" className="text-sm font-medium text-indigo-100 hover:text-white-500">
                     See all {reviews.totalCount} reviews
                   </a>
                 </div>

@@ -1,14 +1,8 @@
 
 
-
-"use client";
-
-import React, { Fragment, useEffect, useState } from 'react';
-
+import React from 'react';
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-
-
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -16,15 +10,9 @@ import {
   UserIcon,
 } from '@heroicons/react/24/outline'
 
-
-
-
-import Image from 'next/image'
 import Link from 'next/link'
-
-import { usePathname } from 'next/navigation'
-import MobileNavigation from './MobileNavigation';
-
+import MobileNavigationContent from './MobileNavigationContent';
+import { createClient } from '@/utils/supabase/server';
 
 
 function classNames(...classes) {
@@ -70,36 +58,7 @@ const SecondNavMenu = () => (
 
 
 
-export function MobileNavItem({ href, handleNavItemClick, classN, textStyle, activeColor, children }) {
-  const router = usePathname();
-  const [activePath, setActivePath] = useState('');
 
-  useEffect(() => {
-    setActivePath(router.pathname);
-  }, [router.pathname]);
-
-  const handleClick = () => {
-    handleNavItemClick(false);
-  };
-
-  const isActive = activePath === href;
-
-  return (
-    <div className={clsx(classN && classN, "relative w-full sm:h-full justify-center  !pl-[4%] sm:border-r border-black dark:!group-hover:text-white")}
-        onClick={handleClick}>
-      <Link href={href ?? "#"} passHref>
-        <div className={clsx(
-          textStyle && textStyle,
-          "block lg:py-8 sm:py-4 text-2xl uppercase",
-          isActive ? activeColor : "text-white",
-          "dark:hover:text-white"
-        )}>
-          {children}
-        </div>
-      </Link>
-    </div>
-  );
-}
 
 
 const transparent =
@@ -107,75 +66,23 @@ const transparent =
 
 
 
-export default function NewHeadercopy() {
-  const [isScrollingUp, setIsScrollingUp] = useState(false);
-  const [isTop, setIsTop] = useState(true);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [isSocialVisible, setIsSocialVisible] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false); // New state for managing the nav checkbox
+  export default async function MobileNavigation() {
+  const supabase = createClient();
 
- const navigation = [{name:'About', href:'/about'}, {name:'Exercises', href:'/exercises'}, {href:"/contact", name:'Contact'} ]
- const paradigms = [{name:'Tracks', href:'/tracks'}, {name:'Settings', href:"/settings"},{name:'Login', href:'/auth'} ]
- const additionalNavItems = [
-  {name:'Subscription'}, 
-  {href:'/subscription'},
-  {name:'Tracks', href:'/tracks'},
+  const {
+    data: { user }
+  } = await supabase.auth.getUser();
 
-  {name:'Profile', href:"/profile"},
-  {name:'Login', href:'/login'},
-  {name:'Social', href:'/social'}  ]
-  useEffect(() => {
-    const handleScroll = () => {
-      const st = window.scrollY || document.documentElement.scrollTop;
-
-      if (st > lastScrollTop) {
-        // Downscroll code
-        setIsScrollingUp(false);
-      } else {
-        // Upscroll code
-        if (st > 0) {
-          setIsScrollingUp(true);
-        }
-        if (st === 0 || st <= 9) {
-          setIsTop(true);
-          console.log("IS_TOP-", isTop, "ST ", st, "lastScrollTop", lastScrollTop);
-        } else {
-          setIsTop(false);
-          console.log("IS_TOP-", isTop)
-        }
-      }
-      setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollTop]);
-
-
-  // const baseStyle = 'h-[6.1em] sm:h-[8em] lg:!h-[12em] z-50 mt-20 !z-50';
-    const baseStyle = 'lg:h-[4.1em] sm:h-[4em] lg:!h-[8em] z-50 mt-0 !z-50';
-  const applyStyle = '!sticky lg:pt-2 bg-black lg:!top-0 !z-30 !inset-x-0 lg:h-[5.1em] lg:pl-[1em] lg:pt-[0%] !z-50';
-
-  const handleNavToggle = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
-  const handleNavItemClick = () => {
-    setIsNavOpen(false);
-  };
 
   return (
-    <div
-    id="NEWHEADER-COPY" className={`${isNavOpen ? 'absolute top-0 min-h-[100vh] h-full' : 'relative pb-[0em]'} www-navigation__mobile__menu-bar !z-50 box-shadow container-fluid dark:!text-white w-screen mx-auto !overflow-hidden g:h-[4.1em] sm:h-[4em] lg:!h-[8em] z-50 mt-0`}
-      style={{ transition: 'all 0.8s' }}  >
-     {isNavOpen &&  <div className="lg:hidden absolute top-0 w-full">
-        <MobileNavigation key="MOBILE" isNavOpen={isNavOpen} handleNavToggle={handleNavToggle} isTop={isTop} isScrollingUp={isScrollingUp}/>
-      </div> }
+    <div  id="NEWHEADER-COPY" className={`'absolute top-0 h-full pb-[0em]'} www-navigation__mobile__menu-bar !z-50 box-shadow container-fluid dark:!text-white w-screen mx-auto !overflow-hidden g:h-[4.1em] sm:h-[4em] lg:!h-[8em] z-50 mt-0 lg:!hidden`} style={{ transition: 'all 0.8s' }}>
+      <div className="lg:hidden absolute top-0 w-full">
+        <MobileNavigationContent user={user} key="MOBILE"/>
+      </div> 
       {/* <div className="inner h-[4em]  sm:grid sm:grid-cols-6"> */}
       <div className="inner py-4 h-24 w-full max-[490px]:mt-[0px] sm:grid sm:grid-cols-6">
         <div className={`max-lg:hidden z-50 logo px-8 sm:px-[4%] sm:col-span-2 pt-3 !max-w-sm lg:!py-[0.2%]'}`}>
-          <Link href="/" onClick={handleNavItemClick} className='min-[1024px]:hidden !z-50'>
+          <Link href="/" className='min-[1024px]:hidden !z-50'>
           <h1 className="text-white text-5xl pb-4 !z-50">ODFIT</h1>         
           </Link>
             <div class="relative -mx-5 mt-8 ring-1 ring-slate-900/5 sm:mx-0 sm:rounded-2xl">
@@ -191,11 +98,11 @@ export default function NewHeadercopy() {
               </div>
              </div>
           </div>
-          <div className={clsx(`lg:px-4 sm:!px-0 sm:col-span-4  max-[490px]:flex sm:px-0 bg-[#2c2c2c80] relative sm:h-[4em] z-50 mt-0 bg-[#1c1a1a] ' } ${isSocialVisible && '!bg-[#2b2829]'}`)}>
+          {/* <div className={clsx(`lg:px-4 sm:!px-0 sm:col-span-4  max-[490px]:flex sm:px-0 bg-[#2c2c2c80] relative sm:h-[4em] z-50 mt-0 bg-[#1c1a1a] ' } ${isSocialVisible && '!bg-[#2b2829]'}`)}>
           <nav   className={clsx(`nav nav--primary py-[0px]`)} >
             <div id="www-navigation__mobile__menu-content" className={clsx(`nav nav--primary  ${isNavOpen ? '!bg-[#0c0c0c]': ''}`)} > 
             <MobileOpenedHeader  isNavOpen={isNavOpen} handleNavToggle={handleNavToggle}/>
-              <div  className={clsx(`${isNavOpen && 'pt-14' } www-navigation__mobile__menu-content w-full flex-block max-[640px]:!mt-[8em]!pb-[4%] lg:!pt-[0%] lg:grid`)} style={{ transition: '2s !important' }}>
+              <div  className={clsx(`${isNavOpen && 'z-50' } www-navigation__mobile__menu-content w-full flex-block max-[640px]:!mt-[8em]!pb-[4%] lg:!pt-[0%] lg:grid `)} style={{ transition: '2s !important' }}>
               <div className="social-icons z-30 mx-auto justify-center">
               <nav className={`nav nav--social transition-all duration-700 ease-in-out bg-[#1c1a1a] dark:!text-white z-30 absolute top-[0em] left-0 w-full justify-center content-center border-b border-yellow-600`}>
               <div className="paradigms w-full group border-t max-[640px]:py-0 max-[640px]:pb-4 py-8  sm:py-4 sm:h-24   bg-white">
@@ -205,40 +112,13 @@ export default function NewHeadercopy() {
             </div>  
             </div>
           </nav> 
-        </div>
+        </div> */}
       </div>
     </div>
   );
 }
 
-const MobileOpenedHeader = function({isNavOpen, handleNavToggle}){
-  return   <div className="z-50 top-14 w-full py-[4%] max-w-[100vw] left-[0%] px-[7%] lg:hidden text-white text-5xl !text-gray-100 bg-black "> 
-   <div className="inline-flex grid grid-cols-5 w-[100vw]">
-    <h1 className="text-white col-span-4 text-5xl !text-gray-100 text-left  ">
-      <Link href="/">ODFIT
-      </Link>
-    </h1>
-   <div className="group flex !relative flex-end h-14 w-14 ">
-     <div className=" justify-end  col-span-1"/>
-        <input 
-        //  id="INNER-TOGGLE"
-          type="checkbox"
-          className="nav__toggle-checkbox"
-          id="nav-menu-toggle"
-          checked={isNavOpen}
-          onChange={handleNavToggle}
-        />
-  
-        <label style={{ transition: '.4s'}}
-            htmlFor="nav-menu-toggle"
-            className={`${ 'mt-5 !z-50  nav__toggle dark:!text-white !px-[0.5em]  !top-[0%] before:text-white'}`}>
-          <span className=''/>
-        </label>
-     </div>
-    </div> 
-  </div>
 
-}
 
 
 

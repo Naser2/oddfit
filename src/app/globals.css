@@ -864,12 +864,12 @@ body {
   overflow-x: hidden;
 }
 
-section {
+/* section {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
+} */
 
 section.overlay {
   padding-top: 50vh; /* Ensures content starts after the first section */

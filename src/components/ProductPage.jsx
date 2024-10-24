@@ -369,7 +369,7 @@ export default function ProductPage({product}) {
                 <span className="text-lg lg:text-2xl "> out of 5 stars</span>
                 </div>
                 <div className="sm:ml-4 flex">
-                  <Button  onClick={() => setOpen(true)}  href="#" className="text-md  flex sm:dark:bg-black lg:text-xl font-medium text-indigo-600 hover:text-orange-200">
+                  <Button  onClick={() => setOpen(true)}  href="#" className="text-md  flex sm:dark:bg-black lg:text-xl font-medium text-indigo-100 hover:text-orange-200">
                     See {reviewsData.totalCount} reviews
                   </Button>
                 </div>

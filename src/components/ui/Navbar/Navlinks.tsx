@@ -1,5 +1,5 @@
 
-
+"use client"
 import Link from 'next/link';
 import { SignOut } from '@/utils/auth-helpers/server';
 import { handleRequest } from '@/utils/auth-helpers/client';
@@ -22,7 +22,16 @@ export default function Navlinks({ user }: NavlinksProps) {
           <Logo />
         </Link>
         <nav className="ml-6 space-x-2 lg:block">
-          <Link href="/" className={s.link}>
+          <Link href="/tracks" className={s.link}>
+            Tracks
+          </Link>
+          <Link href="/excercises" className={s.link}>
+            Exercises
+          </Link>
+          <Link href="/about" className={s.link}>
+            About
+          </Link>
+          <Link href="/pricing" className={s.link}>
             Pricing
           </Link>
           {user && (

@@ -8,6 +8,7 @@ import {
   deletePriceRecord
 } from '@/utils/supabase/admin';
 
+console.log(`🔔  Webhook_CALLED`);
 const relevantEvents = new Set([
   'product.created',
   'product.updated',
@@ -25,12 +26,12 @@ export async function POST(req: Request) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature') as string;
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  console.log(`🔔  Webhook_CALLED-webhookSecret`,webhookSecret);
   let event: Stripe.Event;
 
   try {
-    if (!sig || !webhookSecret){
-      console.log('Webhook secret not found.')
-      return new Response('Webhook secret not found.', { status: 400 });}
+    if (!sig || !webhookSecret)
+      return new Response('Webhook secret not found.', { status: 400 });
     event = stripe.webhooks.constructEvent(body, sig, webhookSecret);
     console.log(`🔔  Webhook received: ${event.type}`);
   } catch (err: any) {
@@ -68,7 +69,6 @@ export async function POST(req: Request) {
         case 'checkout.session.completed':
           const checkoutSession = event.data.object as Stripe.Checkout.Session;
           if (checkoutSession.mode === 'subscription') {
-            console.log('Webhook subscription.')
             const subscriptionId = checkoutSession.subscription;
             await manageSubscriptionStatusChange(
               subscriptionId as string,
