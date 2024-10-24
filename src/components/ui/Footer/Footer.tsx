@@ -5,7 +5,7 @@ import Logo from '@/components/icons/Logo';
 
 export default function Footer() {
   return (
-    <footer className="footer mx-auto max-w-[1920px] px-6 bg-zinc-900">
+    <footer id="footer " className="mx-auto max-w-[1920px] px-6 bg-zinc-900">
       <div className="grid grid-cols-1 gap-8 py-12 text-white transition-colors duration-150 border-b lg:grid-cols-12 border-zinc-600 bg-zinc-900">
         <div className="col-span-1 lg:col-span-3 xl:col-span-4">
           <Link
