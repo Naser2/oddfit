@@ -40,7 +40,7 @@ export default function EmailSignIn({
             <label htmlFor="email">Email</label>
             <input
               id="email"
-              placeholder="name@example.com"
+              placeholder="victor@gmail.com"
               type="email"
               name="email"
               autoCapitalize="none"
@@ -63,7 +63,7 @@ export default function EmailSignIn({
       {allowPassword && (
         <>
           <p>
-            <Link href="/signin/password_signin" className="font-light text-sm">
+            <Link href="/signin/password_signin" className="font-light text-sm hover:text-sky-500 hover:underline">
               Sign in with email and password
             </Link>
           </p>

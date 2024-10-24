@@ -52,7 +52,7 @@ interface NavlinksProps {
   user?: any;
 }
 export default function MobileNavigationContent({ user}: NavlinksProps) {
-  console.log("user___", user);
+  // console.log("user___", user);
 
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isTop, setIsTop] = useState(true);

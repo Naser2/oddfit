@@ -38,7 +38,7 @@ export default function PasswordSignIn({
             <label htmlFor="email">Email</label>
             <input
               id="email"
-              placeholder="name@example.com"
+              placeholder="victor@gmail.com"
               type="email"
               name="email"
               autoCapitalize="none"

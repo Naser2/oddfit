@@ -36,7 +36,7 @@ export default function SignUp({ allowEmail, redirectMethod }: SignUpProps) {
             <label htmlFor="email">Email</label>
             <input
               id="email"
-              placeholder="name@example.com"
+              placeholder="victor@gmail.com"
               type="email"
               name="email"
               autoCapitalize="none"
@@ -66,13 +66,13 @@ export default function SignUp({ allowEmail, redirectMethod }: SignUpProps) {
       </form>
       <p>Already have an account?</p>
       <p>
-        <Link href="/signin/password_signin" className="font-light text-sm">
+        <Link href="/signin/password_signin" className="font-light text-sm hover:text-sky-500 hover:underline">
           Sign in with email and password
         </Link>
       </p>
       {allowEmail && (
         <p>
-          <Link href="/signin/email_signin" className="font-light text-sm">
+          <Link href="/signin/email_signin" className="font-light text-sm hover:text-sky-500 hover:underline">
             Sign in via magic link
           </Link>
         </p>
