@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Logo from '@/components/icons/Logo';
-import GitHub from '../../icons/GitHub';
+// import GitHub from '../../icons/GitHub';
 
 export default function Footer() {
   return (
@@ -116,12 +116,12 @@ export default function Footer() {
         </div>
         <div className="flex items-start col-span-1 text-white lg:col-span-6 lg:justify-end">
           <div className="flex items-center h-10 space-x-6">
-            <a
+            {/* <a
               aria-label="Github Repository"
               href="https://github.com/vercel/nextjs-subscription-payments"
             >
               <GitHub />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
