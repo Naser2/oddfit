@@ -56,7 +56,7 @@ export default async function SignIn({
 
   return (
     <div className="flex justify-center height-screen-helper">
-      <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
+      <div className="flex flex-col justify-between max-lg:w-[w-[23rem] sm:max-w-[23rem] lg:!max-w-xl p-3 m-auto w-[24rem] ">
         <div className="flex justify-center pb-12 ">
           <Logo width="64px" height="64px" />
         </div>
