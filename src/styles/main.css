@@ -57,3 +57,71 @@ p a {
 .height-screen-helper {
   min-height: calc(100vh - 80px);
 }
+
+
+#footer .footer-nav-link, .footer-main .footer-nav-link {
+  outline-offset: -2px;
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1em;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 2.26em;
+  word-break: break-word;
+  color: #000;
+  opacity: .65;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: block;
+  -webkit-transition: opacity 300ms ease, color .3s ease;
+  transition: opacity 300ms ease, color .3s ease;
+}
+#footer .footer-nav-link:last-child, .footer-main .footer-nav-link:last-child {
+  margin-bottom: 10px;
+}
+
+#footer.is-dark .footer-nav-link, .footer-main.is-dark .footer-nav-link {
+  opacity: .6;
+}
+
+
+#footer.is-dark h1, .footer-main.is-dark h1, #footer.is-dark h2, .footer-main.is-dark h2, #footer.is-dark h3, .footer-main.is-dark h3, #footer.is-dark h4, .footer-main.is-dark h4, #footer.is-dark p, .footer-main.is-dark p, #footer.is-dark .eyebrow, .footer-main.is-dark .eyebrow, #footer.is-dark a, .footer-main.is-dark a, #footer.is-dark blockquote, .footer-main.is-dark blockquote, #footer.is-dark cite, .footer-main.is-dark cite, #footer.is-dark label, .footer-main.is-dark label, #footer.is-dark figcaption, .footer-main.is-dark figcaption {
+  color: #fff;
+}
+#footer.is-dark a::after, .footer-main.is-dark a::after {
+  background-color: #fff;
+}
+#footer.is-dark .footer-nav-heading, .footer-main.is-dark .footer-nav-heading {
+  color: #fff;
+}
+
+#footer .footer-nav-heading, .footer-main .footer-nav-heading, #footer .footer-nav-heading-link, .footer-main .footer-nav-heading-link {
+  font-family: "Clarkson", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1em;
+  letter-spacing: 0;
+  text-rendering: geometricPrecision;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.2em;
+  z-index: 0;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -5,7 +5,7 @@ import Logo from '@/components/icons/Logo';
 
 export default function Footer() {
   return (
-    <footer className="mx-auto max-w-[1920px] px-6 bg-zinc-900">
+    <footer className="footer mx-auto max-w-[1920px] px-6 bg-zinc-900">
       <div className="grid grid-cols-1 gap-8 py-12 text-white transition-colors duration-150 border-b lg:grid-cols-12 border-zinc-600 bg-zinc-900">
         <div className="col-span-1 lg:col-span-2">
           <Link
@@ -19,8 +19,13 @@ export default function Footer() {
           </Link>
         </div>
         <div className="col-span-1 lg:col-span-2">
-        <ul className="flex flex-col flex-initial md:flex-1">
-            <li className="py-3 md:py-0 md:pb-4">
+        <ul className="footer-nav-list flex flex-col flex-initial md:flex-1">
+              <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
+              <p className="footer-nav-heading text-white transition duration-150 ease-in-out hover:text-zinc-200">
+                SITE
+              </p>
+            </li>
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -28,7 +33,7 @@ export default function Footer() {
                 Home
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/tracks"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -36,7 +41,7 @@ export default function Footer() {
                 Tracks
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/exercises"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -44,7 +49,7 @@ export default function Footer() {
                 Excersies
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -52,9 +57,26 @@ export default function Footer() {
                 Account
               </Link>
             </li>
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
+              <Link
+                href="/pricing"
+                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+              >
+                Pricing 
+              </Link>
+            </li>
           </ul>
+         
+        </div>
+        <div className="col-span-1 lg:col-span-2">
+       
           <ul className="flex flex-col flex-initial md:flex-1">
-            <li className="py-3 md:py-0 md:pb-4">
+          <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
+              <p className="footer-nav-heading text-white transition duration-150 ease-in-out hover:text-zinc-200">
+                COMPANY
+              </p>
+            </li>
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -62,7 +84,7 @@ export default function Footer() {
                 Home
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/about"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -70,7 +92,7 @@ export default function Footer() {
                 About
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -83,20 +105,13 @@ export default function Footer() {
         </div>
         <div className="col-span-1 lg:col-span-2">
           <ul className="flex flex-col flex-initial md:flex-1">
-          <li className="py-3 md:py-0 md:pb-4">
-              <Link
-                href="/pricing"
-                className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
-              >
-                Pricing 
-              </Link>
-            </li>
-            <li className="py-3 md:py-0 md:pb-4">
-              <p className="font-bold text-white transition duration-150 ease-in-out hover:text-zinc-200">
+        
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
+              <p className="footer-nav-heading text-white transition duration-150 ease-in-out hover:text-zinc-200">
                 LEGAL
               </p>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
@@ -104,7 +119,7 @@ export default function Footer() {
                 Privacy Policy
               </Link>
             </li>
-            <li className="py-3 md:py-0 md:pb-4">
+            <li className="py-3 md:py-0 md:pb-4 is-borderless footer-nav-link ">
               <Link
                 href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
