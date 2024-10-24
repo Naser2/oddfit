@@ -129,7 +129,14 @@ export default function MobileNavigationContent({ user}: NavlinksProps) {
   const router = getRedirectMethod() === 'client' ? useRouter() : null;
   console.log('MobileNavigation', isNavOpen)
 
-  const mobildeNavTop = [{name:'About', href:'/about'}, {name:'Exercises', href:'/exercises'}, {name:'Tracks', href:'/tracks'}, {href:"/contact", name:'Contact'} ]
+  const mobildeNavTop = [
+    {name:'About', href:'/about'},
+    {name:'Exercises', href:'/exercises'}, 
+    {name:'Tracks', href:'/tracks'},
+    {href:"/contact", name:'Contact'},
+    {href:"/pricing", name:'Pricing'},
+    {href:"/account", name:'Account'}
+   ]
   const mobildeNavMiddle =
    [{name:'Settings', href:"/settings"},
   //  {name:'Login', href:'/login'}
